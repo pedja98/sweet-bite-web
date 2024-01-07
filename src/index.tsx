@@ -5,17 +5,17 @@ import { ThemeProvider } from '@mui/material/styles'
 import router from './Router/Router'
 import sweetBiteTheme from './theme/sweetBiteTheme'
 import { CssBaseline } from '@mui/material'
-import { BackGroundDiv } from './styles/common'
+import { StyledBackgroundContainer } from './styles/common'
 
 const root = ReactDOM.createRoot(document.getElementById('root') as HTMLElement)
 
 root.render(
   <React.StrictMode>
-    <BackGroundDiv>
+    <StyledBackgroundContainer>
       <ThemeProvider theme={sweetBiteTheme}>
         <CssBaseline />
         <RouterProvider router={router} />
       </ThemeProvider>
-    </BackGroundDiv>
+    </StyledBackgroundContainer>
   </React.StrictMode>,
 )

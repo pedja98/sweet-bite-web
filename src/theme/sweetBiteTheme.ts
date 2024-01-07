@@ -1,21 +1,19 @@
 import { createTheme } from '@mui/material/styles'
-
-export const PRIMARY_COLOR = '#46A087'
-export const SECONDARY_COLOR = '#6FC1AA'
-export const FONT_COLOR = '#337B68'
+import { FontColor, PrimaryThemeColor, SecondaryThemeColor, SelectedItemColor, WhiteTeamColor } from '../constants/common'
 
 export default createTheme({
   palette: {
     primary: {
-      main: PRIMARY_COLOR,
+      main: PrimaryThemeColor,
+      dark: FontColor,
     },
     secondary: {
-      main: SECONDARY_COLOR,
+      main: SecondaryThemeColor,
+      light: SelectedItemColor,
     },
   },
   typography: {
     fontFamily: '"Kalam", cursive',
-    fontSize: 44,
     h1: {
       fontFamily: '"Kalam", cursive',
       fontSize: '6rem !important',
@@ -31,10 +29,12 @@ export default createTheme({
     h4: {
       fontFamily: '"Kalam", cursive',
       fontSize: '2.125rem !important',
+      color: FontColor,
     },
     h5: {
       fontFamily: '"Kalam", cursive',
       fontSize: '1.5rem !important',
+      color: FontColor,
     },
     h6: {
       fontFamily: '"Kalam", cursive',
@@ -59,6 +59,67 @@ export default createTheme({
     caption: {
       fontFamily: '"Kalam", cursive',
       fontSize: '0.75rem !important',
+    },
+  },
+  components: {
+    MuiButton: {
+      defaultProps: {
+        variant: 'contained',
+      },
+      styleOverrides: {
+        root: {
+          backgroundColor: PrimaryThemeColor,
+          color: WhiteTeamColor,
+        },
+        contained: {
+          boxShadow: 'none',
+          fontWeight: 'bold',
+          fontSize: '18px',
+        },
+      },
+    },
+    MuiTextField: {
+      defaultProps: {
+        variant: 'standard',
+      },
+      styleOverrides: {
+        root: {
+          '& label': {
+            color: FontColor,
+            fontWeight: 'bold',
+            paddingLeft: '5%',
+          },
+          '& input': {
+            color: FontColor,
+            fontWeight: 'bold'
+          },
+        },
+      },
+    },
+    MuiInputLabel: {
+      styleOverrides: {
+        root: {
+          color: FontColor,
+          fontWeight: 'bold',
+        },
+      },
+    },
+    MuiSelect: {
+      defaultProps: {
+        variant: 'standard',
+      },
+      styleOverrides: {
+        root: {
+          '& label': {
+            color: FontColor,
+            fontWeight: 'bold',
+          },
+          '& select': {
+            color: FontColor,
+            fontWeight: 'bold'
+          },
+        },
+      },
     },
   },
 })
