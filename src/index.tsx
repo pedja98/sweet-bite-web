@@ -6,16 +6,25 @@ import router from './Router/Router'
 import sweetBiteTheme from './theme/sweetBiteTheme'
 import { CssBaseline } from '@mui/material'
 import { StyledBackgroundContainer } from './styles/common'
+import { store } from './app/store'
+import { Provider } from 'react-redux'
+import Notification from './components/notifications/Notification'
+import { SnackbarProvider } from 'notistack'
 
 const root = ReactDOM.createRoot(document.getElementById('root') as HTMLElement)
 
 root.render(
   <React.StrictMode>
-    <StyledBackgroundContainer>
-      <ThemeProvider theme={sweetBiteTheme}>
-        <CssBaseline />
-        <RouterProvider router={router} />
-      </ThemeProvider>
-    </StyledBackgroundContainer>
+    <Provider store={store}>
+      <StyledBackgroundContainer>
+        <ThemeProvider theme={sweetBiteTheme}>
+          <CssBaseline />
+          <SnackbarProvider maxSnack={5} autoHideDuration={8000}>
+            <Notification />
+          </SnackbarProvider>
+          <RouterProvider router={router} />
+        </ThemeProvider>
+      </StyledBackgroundContainer>
+    </Provider>
   </React.StrictMode>,
 )

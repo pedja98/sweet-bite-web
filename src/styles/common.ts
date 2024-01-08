@@ -41,7 +41,6 @@ export const SelectStyled = styled(Select)(({ theme }) => ({
   },
 }))
 
-
 export const MenuItemStyled = styled(MenuItem)(({ theme }) => ({
   color: FontColor,
   fontWeight: 'bold',
@@ -62,4 +61,11 @@ export const TextFieldStyled = styled(TextField)(({ theme }) => ({
   '&.Mui-focusVisible': {
     borderColor: theme.palette.primary.main,
   },
+}))
+
+export const NameSurnameContainer = styled('div')(() => ({
+  width: '100%',
+  display: 'flex',
+  justifyContent: 'space-between',
+  alignItems: 'center',
 }))

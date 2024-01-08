@@ -1,5 +1,11 @@
 import { createTheme } from '@mui/material/styles'
-import { FontColor, PrimaryThemeColor, SecondaryThemeColor, SelectedItemColor, WhiteTeamColor } from '../constants/common'
+import {
+  FontColor,
+  PrimaryThemeColor,
+  SecondaryThemeColor,
+  SelectedItemColor,
+  WhiteTeamColor,
+} from '../constants/common'
 
 export default createTheme({
   palette: {
@@ -91,7 +97,7 @@ export default createTheme({
           },
           '& input': {
             color: FontColor,
-            fontWeight: 'bold'
+            fontWeight: 'bold',
           },
         },
       },
@@ -116,7 +122,7 @@ export default createTheme({
           },
           '& select': {
             color: FontColor,
-            fontWeight: 'bold'
+            fontWeight: 'bold',
           },
         },
       },
