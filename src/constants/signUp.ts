@@ -1,7 +1,13 @@
 export const SignUpFieldStyles = {
   m: 1,
   width: 280,
-  maxHeight: 92,
+  height: 40,
+}
+
+export const SignUpSelectStyles = {
+  width: 280,
+  height: 40,
+  mt: 3,
 }
 
 export const SignUpButtonStyles = {
@@ -14,7 +20,7 @@ export const SignUpCartContextAndActionStyles = { display: 'flex', flexDirection
 
 export const SignUpNameAndSurnameFieldStyles = {
   maxWidth: '48%',
-  maxHeight: 92,
+  height: 40,
   mt: 1,
   mb: 1,
 }

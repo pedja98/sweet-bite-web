@@ -8,7 +8,14 @@ import {
   SelectChangeEvent,
   Typography,
 } from '@mui/material'
-import { LinkStyled, MenuItemStyled, Root, SelectStyled, TextFieldStyled } from '../../styles/common'
+import {
+  LinkStyled,
+  MenuItemStyled,
+  Root,
+  SelectStyled,
+  StyledCenterBackgroundContainer,
+  TextFieldStyled,
+} from '../../styles/common'
 import { SignInButtonStyles, SignInCartContextAndActionStyles, SignInFieldStyles } from '../../constants/signIn'
 import { ChangeEvent, useEffect, useRef, useState } from 'react'
 import { SignInProps } from '../../interfaces/signIn'
@@ -67,57 +74,61 @@ const SignIn = () => {
       )
       return
     }
-    navigate('/home')
+
+    localStorage.setItem('auth', JSON.stringify({ username: signInData.username, type: signInData.type }))
+    navigate('/user')
   }
 
   return (
-    <Card
-      variant='outlined'
-      sx={{
-        maxWidth: 310,
-        maxHeight: 635,
-        display: 'flex',
-        flexDirection: 'column',
-        paddingTop: '1.5%',
-      }}
-    >
-      <CardContent sx={SignInCartContextAndActionStyles}>
-        <Root>
-          <Typography variant='h5'>DOBRODOŠLI</Typography>
-        </Root>
-        <TextFieldStyled
-          sx={SignInFieldStyles}
-          id='username'
-          label='Korisničko ime'
-          value={signInData.username}
-          onChange={handleChange('username')}
-        />
-        <TextFieldStyled
-          sx={SignInFieldStyles}
-          id='password'
-          label='Lozinka'
-          type='password'
-          value={signInData.password}
-          onChange={handleChange('password')}
-        />
-        <FormControl sx={SignInFieldStyles} size='small'>
-          <InputLabel id='type'>Tip korisnika</InputLabel>
-          <SelectStyled labelId='type' id='type' label='Type' value={signInData.type} onChange={handleChange('type')}>
-            <MenuItemStyled value=''>
-              <em>Nijedan</em>
-            </MenuItemStyled>
-            <MenuItemStyled value={'kupac'}>Kupac</MenuItemStyled>
-            <MenuItemStyled value={'zaposleni'}>Zaposleni</MenuItemStyled>
-          </SelectStyled>
-        </FormControl>
-      </CardContent>
-      <LinkStyled to='/sign-up'>Nemate nalog?</LinkStyled>
-      <CardActions sx={SignInCartContextAndActionStyles}>
-        <Button ref={signInButtonRef} sx={SignInButtonStyles} onClick={handleSignIn}>
-          Prijavi se
-        </Button>
-      </CardActions>
-    </Card>
+    <StyledCenterBackgroundContainer>
+      <Card
+        variant='outlined'
+        sx={{
+          maxWidth: 310,
+          maxHeight: 635,
+          display: 'flex',
+          flexDirection: 'column',
+          paddingTop: '1.5%',
+        }}
+      >
+        <CardContent sx={SignInCartContextAndActionStyles}>
+          <Root>
+            <Typography variant='h5'>DOBRODOŠLI</Typography>
+          </Root>
+          <TextFieldStyled
+            sx={SignInFieldStyles}
+            id='username'
+            label='Korisničko ime'
+            value={signInData.username}
+            onChange={handleChange('username')}
+          />
+          <TextFieldStyled
+            sx={SignInFieldStyles}
+            id='password'
+            label='Lozinka'
+            type='password'
+            value={signInData.password}
+            onChange={handleChange('password')}
+          />
+          <FormControl sx={SignInFieldStyles} size='small'>
+            <InputLabel id='type'>Tip korisnika</InputLabel>
+            <SelectStyled labelId='type' id='type' label='Type' value={signInData.type} onChange={handleChange('type')}>
+              <MenuItemStyled value=''>
+                <em>Nijedan</em>
+              </MenuItemStyled>
+              <MenuItemStyled value={'kupac'}>Kupac</MenuItemStyled>
+              <MenuItemStyled value={'zaposleni'}>Zaposleni</MenuItemStyled>
+            </SelectStyled>
+          </FormControl>
+        </CardContent>
+        <LinkStyled to='/sign-up'>Nemate nalog?</LinkStyled>
+        <CardActions sx={SignInCartContextAndActionStyles}>
+          <Button ref={signInButtonRef} sx={SignInButtonStyles} onClick={handleSignIn}>
+            Prijavi se
+          </Button>
+        </CardActions>
+      </Card>
+    </StyledCenterBackgroundContainer>
   )
 }
 

@@ -7,14 +7,13 @@ const notificationsSlice = createSlice({
   initialState: NotificationsInitialState,
   reducers: {
     setNotification: (state, action: PayloadAction<{ text: string; type: NotificationType }>) => {
-      return [...state, { ...action.payload, key: new Date().getTime() + Math.random() }];
+      return [...state, { ...action.payload, key: new Date().getTime() + Math.random() }]
     },
     removeNotification: (state, action: PayloadAction<number>) => {
-      return state.filter((notification) => notification.key !== action.payload);
+      return state.filter((notification) => notification.key !== action.payload)
     },
   },
 })
-
 
 export const { setNotification, removeNotification } = notificationsSlice.actions
 export default notificationsSlice.reducer

@@ -8,12 +8,20 @@ import {
   SelectChangeEvent,
   Typography,
 } from '@mui/material'
-import { MenuItemStyled, NameSurnameContainer, Root, SelectStyled, TextFieldStyled } from '../../styles/common'
+import {
+  MenuItemStyled,
+  NameSurnameContainer,
+  Root,
+  SelectStyled,
+  StyledCenterBackgroundContainer,
+  TextFieldStyled,
+} from '../../styles/common'
 import {
   SignUpButtonStyles,
   SignUpCartContextAndActionStyles,
   SignUpFieldStyles,
   SignUpNameAndSurnameFieldStyles,
+  SignUpSelectStyles,
 } from '../../constants/signUp'
 import { SignUpProps } from '../../interfaces/signUp'
 import { ChangeEvent, useEffect, useRef, useState } from 'react'
@@ -97,90 +105,91 @@ const SignUp = () => {
   }
 
   return (
-    <Card
-      variant='outlined'
-      sx={{
-        maxWidth: 310,
-        maxHeight: 635,
-        display: 'flex',
-        flexDirection: 'column',
-        paddingTop: '1.5%',
-      }}
-    >
-      <CardContent sx={SignUpCartContextAndActionStyles}>
-        <Root>
-          <Typography variant='h5'>KRERRAJ NALOG</Typography>
-        </Root>
-        <NameSurnameContainer>
+    <StyledCenterBackgroundContainer>
+      <Card
+        variant='outlined'
+        sx={{
+          maxWidth: 310,
+          display: 'flex',
+          flexDirection: 'column',
+          paddingTop: '1.5%',
+        }}
+      >
+        <CardContent sx={SignUpCartContextAndActionStyles}>
+          <Root>
+            <Typography variant='h5'>KRERRAJ NALOG</Typography>
+          </Root>
+          <NameSurnameContainer>
+            <TextFieldStyled
+              sx={SignUpNameAndSurnameFieldStyles}
+              id='name'
+              label='Ime'
+              value={signUpData.name}
+              onChange={handleChange('name')}
+            />
+            <TextFieldStyled
+              sx={SignUpNameAndSurnameFieldStyles}
+              id='surname'
+              label='Prezime'
+              value={signUpData.surname}
+              onChange={handleChange('surname')}
+            />
+          </NameSurnameContainer>
           <TextFieldStyled
-            sx={SignUpNameAndSurnameFieldStyles}
-            id='name'
-            label='Ime'
-            value={signUpData.name}
-            onChange={handleChange('name')}
+            sx={SignUpFieldStyles}
+            id='address'
+            label='Adresa'
+            value={signUpData.address}
+            onChange={handleChange('address')}
           />
           <TextFieldStyled
-            sx={SignUpNameAndSurnameFieldStyles}
-            id='surname'
-            label='Prezime'
-            value={signUpData.surname}
-            onChange={handleChange('surname')}
+            sx={SignUpFieldStyles}
+            id='phone'
+            label='Telefon'
+            value={signUpData.phone}
+            onChange={handleChange('phone')}
           />
-        </NameSurnameContainer>
-        <TextFieldStyled
-          sx={SignUpFieldStyles}
-          id='address'
-          label='Adresa'
-          value={signUpData.address}
-          onChange={handleChange('address')}
-        />
-        <TextFieldStyled
-          sx={SignUpFieldStyles}
-          id='phone'
-          label='Telefon'
-          value={signUpData.phone}
-          onChange={handleChange('phone')}
-        />
-        <TextFieldStyled
-          sx={SignUpFieldStyles}
-          id='username'
-          label='Korisničko ime'
-          value={signUpData.username}
-          onChange={handleChange('username')}
-        />
-        <FormControl sx={SignUpFieldStyles} size='small'>
-          <InputLabel id='type'>Tip korisnika</InputLabel>
-          <SelectStyled labelId='type' id='type' label='Type' value={signUpData.type} onChange={handleChange('type')}>
-            <MenuItemStyled value=''>
-              <em>Nijedan</em>
-            </MenuItemStyled>
-            <MenuItemStyled value={'kupac'}>Kupac</MenuItemStyled>
-            <MenuItemStyled value={'zaposleni'}>Zaposleni</MenuItemStyled>
-          </SelectStyled>
-        </FormControl>
-        <TextFieldStyled
-          sx={SignUpFieldStyles}
-          id='password'
-          label='Lozinka'
-          type='password'
-          value={signUpData.password}
-          onChange={handleChange('password')}
-        />
-        <TextFieldStyled
-          sx={SignUpFieldStyles}
-          id='confirm'
-          label='Potvrda'
-          type='password'
-          value={signUpData.confirm}
-          onChange={handleChange('confirm')}
-        />
-      </CardContent>
-      <CardActions sx={SignUpCartContextAndActionStyles}>
-        <Button ref={signUpButtonRef} sx={SignUpButtonStyles} onClick={handleSignUp}>
-          Kreiraj nalog
-        </Button>
-      </CardActions>
-    </Card>
+          <TextFieldStyled
+            sx={SignUpFieldStyles}
+            id='username'
+            label='Korisničko ime'
+            value={signUpData.username}
+            onChange={handleChange('username')}
+          />
+          <FormControl sx={SignUpSelectStyles} size='small'>
+            <InputLabel id='type'>Tip korisnika</InputLabel>
+            <SelectStyled labelId='type' id='type' label='Type' value={signUpData.type} onChange={handleChange('type')}>
+              <MenuItemStyled value=''>
+                <em>Nijedan</em>
+              </MenuItemStyled>
+              <MenuItemStyled value={'kupac'}>Kupac</MenuItemStyled>
+              <MenuItemStyled value={'zaposleni'}>Zaposleni</MenuItemStyled>
+            </SelectStyled>
+          </FormControl>
+          <TextFieldStyled
+            sx={SignUpFieldStyles}
+            id='password'
+            label='Lozinka'
+            type='password'
+            value={signUpData.password}
+            onChange={handleChange('password')}
+          />
+          <TextFieldStyled
+            sx={SignUpFieldStyles}
+            id='confirm'
+            label='Potvrda'
+            type='password'
+            value={signUpData.confirm}
+            onChange={handleChange('confirm')}
+          />
+        </CardContent>
+        <CardActions sx={SignUpCartContextAndActionStyles}>
+          <Button ref={signUpButtonRef} sx={SignUpButtonStyles} onClick={handleSignUp}>
+            Kreiraj nalog
+          </Button>
+        </CardActions>
+      </Card>
+    </StyledCenterBackgroundContainer>
   )
 }
 

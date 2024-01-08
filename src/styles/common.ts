@@ -1,6 +1,6 @@
 import { styled } from '@mui/material/styles'
 import { Link } from 'react-router-dom'
-import { FontColor, PrimaryThemeColor, SecondaryThemeColor } from '../constants/common'
+import { FontColor, PrimaryThemeColor, SecondaryThemeColor, WhiteTeamColor } from '../constants/common'
 import { MenuItem, Select, TextField } from '@mui/material'
 
 export const StyledBackgroundContainer = styled('div')(() => ({
@@ -8,10 +8,14 @@ export const StyledBackgroundContainer = styled('div')(() => ({
   minWidth: '100vw',
   minHeight: '100vh',
   color: FontColor,
+}))
+
+export const StyledCenterBackgroundContainer = styled('div')(() => ({
   display: 'flex',
   flexDirection: 'column',
   alignItems: 'center',
   justifyContent: 'center',
+  height: '100vh',
 }))
 
 export const Root = styled('div')(() => ({
@@ -68,4 +72,10 @@ export const NameSurnameContainer = styled('div')(() => ({
   display: 'flex',
   justifyContent: 'space-between',
   alignItems: 'center',
+}))
+
+export const WhiteRoot = styled('div')(() => ({
+  width: '100%',
+  textAlign: 'center',
+  backgroundColor: WhiteTeamColor,
 }))
