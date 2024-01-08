@@ -1,13 +1,25 @@
-import { Action, ThunkAction, configureStore } from '@reduxjs/toolkit'
+import { Action, ThunkAction, combineReducers, configureStore } from '@reduxjs/toolkit'
+import { persistReducer, persistStore } from 'redux-persist'
+import storage from 'redux-persist/lib/storage'
 import usersReducer from '../features/users/users.slice'
 import notificationsReducer from '../features/notifications/notifications.slice'
 
-export const store = configureStore({
-  reducer: {
-    users: usersReducer,
-    notifications: notificationsReducer,
-  },
+const persistConfig = {
+  key: 'root',
+  storage,
+}
+
+const rootReducer = combineReducers({
+  users: usersReducer,
+  notifications: notificationsReducer,
 })
+
+const persistedReducer = persistReducer(persistConfig, rootReducer)
+
+export const store = configureStore({
+  reducer: persistedReducer,
+})
+export const persistor = persistStore(store)
 
 export type AppDispatch = typeof store.dispatch
 export type RootState = ReturnType<typeof store.getState>
