@@ -4,5 +4,6 @@ export const UserStyledCenterBackgroundContainer = styled('div')(() => ({
   display: 'flex',
   flexDirection: 'column',
   alignItems: 'center',
-  marginTop: '2%',
+  marginTop: '1%',
+  marginBottom: '1%',
 }))
