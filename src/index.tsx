@@ -8,7 +8,7 @@ import { CssBaseline } from '@mui/material'
 import { StyledBackgroundContainer } from './styles/common'
 import { persistor, store } from './app/store'
 import { Provider } from 'react-redux'
-import Notification from './components/notifications/Notification'
+import Notification from './components/notification/Notification'
 import { SnackbarProvider } from 'notistack'
 import { PersistGate } from 'redux-persist/integration/react'
 

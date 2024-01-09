@@ -7,6 +7,7 @@ import {
 } from '../../../styles/navBar'
 import { useAppDispatch } from '../../../app/hooks'
 import { signOut } from '../../../features/auth/auth.slice'
+import { UserTypeKupac } from '../../../constants/user'
 
 const NavBar = ({ userType }: { userType: string }) => {
   const navigate = useNavigate()
@@ -16,10 +17,10 @@ const NavBar = ({ userType }: { userType: string }) => {
     dispatch(signOut())
     navigate('/')
   }
-
+  console.log(userType)
   return (
     <NavigationStyled>
-      {userType === 'Kupac' ? (
+      {userType === UserTypeKupac ? (
         <NavigationLinksContainerStyled>
           <NavBarLinkStyled to='/user'>Početna</NavBarLinkStyled>
           <NavBarLinkStyled to='/user'>Moje narudžbine</NavBarLinkStyled>

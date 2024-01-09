@@ -4,9 +4,6 @@ import { removeNotification } from '../../features/notifications/notifications.s
 import { useAppDispatch, useAppSelector } from '../../app/hooks'
 import { selectNotifications } from '../../features/notifications/notifications.selectors'
 
-/**
- * Connection of notistack to global app state
- */
 const Notification = () => {
   const notifications = useAppSelector(selectNotifications)
   const dispatch = useAppDispatch()

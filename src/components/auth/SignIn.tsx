@@ -20,11 +20,12 @@ import { SignInFormButtonStyles, SignInCartContextAndActionStyles, SignInFormFie
 import { ChangeEvent, useEffect, useRef, useState } from 'react'
 import { SignInProps } from '../../interfaces/signIn'
 import { setNotification } from '../../features/notifications/notifications.slice'
-import { NotificationTypeWarning } from '../../constants/notifications'
+import { NotificationTypeWarning } from '../../constants/notification'
 import { useAppDispatch, useAppSelector } from '../../app/hooks'
 import { selectUserByAttributes } from '../../features/users/users.selectors'
 import { useNavigate } from 'react-router-dom'
 import { signIn } from '../../features/auth/auth.slice'
+import { UserTypeKupac, UserTypeZaposleni } from '../../constants/user'
 
 const SignIn = () => {
   const [signInData, setSignInData] = useState<SignInProps>({
@@ -117,8 +118,8 @@ const SignIn = () => {
               <MenuItemStyled value=''>
                 <em>Nijedan</em>
               </MenuItemStyled>
-              <MenuItemStyled value={'kupac'}>Kupac</MenuItemStyled>
-              <MenuItemStyled value={'zaposleni'}>Zaposleni</MenuItemStyled>
+              <MenuItemStyled value={UserTypeKupac}>Kupac</MenuItemStyled>
+              <MenuItemStyled value={UserTypeZaposleni}>Zaposleni</MenuItemStyled>
             </SelectStyled>
           </FormControl>
         </CardContent>

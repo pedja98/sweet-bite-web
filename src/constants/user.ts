@@ -41,3 +41,7 @@ export const UserNameAndSurnameFieldStyles = {
   mt: 1,
   mb: 1,
 }
+
+export const UserTypeKupac = 'kupac'
+
+export const UserTypeZaposleni = 'zaposleni'

@@ -29,9 +29,10 @@ import { useAppDispatch, useAppSelector } from '../../app/hooks'
 import { addUser } from '../../features/users/users.slice'
 import { User } from '../../features/users/users.interfaces'
 import { setNotification } from '../../features/notifications/notifications.slice'
-import { NotificationTypeSuccess, NotificationTypeWarning } from '../../constants/notifications'
+import { NotificationTypeSuccess, NotificationTypeWarning } from '../../constants/notification'
 import { selectUserProperty } from '../../features/users/users.selectors'
 import { useNavigate } from 'react-router-dom'
+import { UserTypeKupac, UserTypeZaposleni } from '../../constants/user'
 
 const SignUp = () => {
   const navigate = useNavigate()
@@ -162,8 +163,8 @@ const SignUp = () => {
               <MenuItemStyled value=''>
                 <em>Nijedan</em>
               </MenuItemStyled>
-              <MenuItemStyled value={'kupac'}>Kupac</MenuItemStyled>
-              <MenuItemStyled value={'zaposleni'}>Zaposleni</MenuItemStyled>
+              <MenuItemStyled value={UserTypeKupac}>Kupac</MenuItemStyled>
+              <MenuItemStyled value={UserTypeZaposleni}>Zaposleni</MenuItemStyled>
             </SelectStyled>
           </FormControl>
           <TextFieldStyled

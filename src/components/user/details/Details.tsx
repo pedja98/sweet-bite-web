@@ -4,7 +4,7 @@ import { selectUserProperty } from '../../../features/users/users.selectors'
 import { DetailsProps } from '../../../interfaces/users'
 import { Button, Card, CardActions, CardContent, SelectChangeEvent, Typography } from '@mui/material'
 import { setNotification } from '../../../features/notifications/notifications.slice'
-import { NotificationTypeSuccess, NotificationTypeWarning } from '../../../constants/notifications'
+import { NotificationTypeSuccess, NotificationTypeWarning } from '../../../constants/notification'
 import { UserStyledCenterBackgroundContainer } from '../../../styles/users'
 import { NameSurnameContainer, Root, TextFieldStyled } from '../../../styles/common'
 import {
@@ -12,7 +12,7 @@ import {
   UserFormButtonStyles,
   UserFormFieldStyles,
   UserNameAndSurnameFieldStyles,
-} from '../../../constants/users'
+} from '../../../constants/user'
 import { selectAuthKey } from '../../../features/auth/auth.selectors'
 import { User } from '../../../features/users/users.interfaces'
 import { updateUser } from '../../../features/users/users.slice'
