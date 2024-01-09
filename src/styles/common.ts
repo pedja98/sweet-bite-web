@@ -1,13 +1,13 @@
 import { styled } from '@mui/material/styles'
 import { Link } from 'react-router-dom'
-import { FontColor, PrimaryThemeColor, SecondaryThemeColor, WhiteTeamColor } from '../constants/common'
+import { TernaryColor, PrimaryThemeColor, SecondaryThemeColor, WhiteTeamColor } from '../constants/common'
 import { MenuItem, Select, TextField } from '@mui/material'
 
 export const StyledBackgroundContainer = styled('div')(() => ({
   backgroundColor: PrimaryThemeColor,
   minWidth: '100vw',
   minHeight: '100vh',
-  color: FontColor,
+  color: TernaryColor,
 }))
 
 export const StyledCenterBackgroundContainer = styled('div')(() => ({
@@ -31,7 +31,7 @@ export const LinkStyled = styled(Link)(() => ({
 }))
 
 export const SelectStyled = styled(Select)(({ theme }) => ({
-  color: FontColor,
+  color: TernaryColor,
   fontWeight: 'bold',
   borderColor: theme.palette.primary.main,
   '&:hover': {
@@ -46,7 +46,7 @@ export const SelectStyled = styled(Select)(({ theme }) => ({
 }))
 
 export const MenuItemStyled = styled(MenuItem)(({ theme }) => ({
-  color: FontColor,
+  color: TernaryColor,
   fontWeight: 'bold',
   '&:hover': {
     backgroundColor: theme.palette.secondary.light,
@@ -57,7 +57,7 @@ export const MenuItemStyled = styled(MenuItem)(({ theme }) => ({
 }))
 
 export const TextFieldStyled = styled(TextField)(({ theme }) => ({
-  color: FontColor,
+  color: TernaryColor,
   borderColor: theme.palette.primary.main,
   '&:hover': {
     borderColor: theme.palette.primary.main,

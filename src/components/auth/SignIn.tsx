@@ -16,7 +16,7 @@ import {
   StyledCenterBackgroundContainer,
   TextFieldStyled,
 } from '../../styles/common'
-import { SignInButtonStyles, SignInCartContextAndActionStyles, SignInFieldStyles } from '../../constants/signIn'
+import { SignInFormButtonStyles, SignInCartContextAndActionStyles, SignInFormFieldStyles } from '../../constants/signIn'
 import { ChangeEvent, useEffect, useRef, useState } from 'react'
 import { SignInProps } from '../../interfaces/signIn'
 import { setNotification } from '../../features/notifications/notifications.slice'
@@ -24,6 +24,7 @@ import { NotificationTypeWarning } from '../../constants/notifications'
 import { useAppDispatch, useAppSelector } from '../../app/hooks'
 import { selectUserByAttributes } from '../../features/users/users.selectors'
 import { useNavigate } from 'react-router-dom'
+import { signIn } from '../../features/auth/auth.slice'
 
 const SignIn = () => {
   const [signInData, setSignInData] = useState<SignInProps>({
@@ -75,7 +76,7 @@ const SignIn = () => {
       return
     }
 
-    localStorage.setItem('auth', JSON.stringify({ username: signInData.username, type: signInData.type }))
+    dispatch(signIn({ username: signInData.username, type: signInData.type }))
     navigate('/user')
   }
 
@@ -96,21 +97,21 @@ const SignIn = () => {
             <Typography variant='h5'>DOBRODOŠLI</Typography>
           </Root>
           <TextFieldStyled
-            sx={SignInFieldStyles}
+            sx={SignInFormFieldStyles}
             id='username'
             label='Korisničko ime'
             value={signInData.username}
             onChange={handleChange('username')}
           />
           <TextFieldStyled
-            sx={SignInFieldStyles}
+            sx={SignInFormFieldStyles}
             id='password'
             label='Lozinka'
             type='password'
             value={signInData.password}
             onChange={handleChange('password')}
           />
-          <FormControl sx={SignInFieldStyles} size='small'>
+          <FormControl sx={SignInFormFieldStyles} size='small'>
             <InputLabel id='type'>Tip korisnika</InputLabel>
             <SelectStyled labelId='type' id='type' label='Type' value={signInData.type} onChange={handleChange('type')}>
               <MenuItemStyled value=''>
@@ -123,7 +124,7 @@ const SignIn = () => {
         </CardContent>
         <LinkStyled to='/sign-up'>Nemate nalog?</LinkStyled>
         <CardActions sx={SignInCartContextAndActionStyles}>
-          <Button ref={signInButtonRef} sx={SignInButtonStyles} onClick={handleSignIn}>
+          <Button ref={signInButtonRef} sx={SignInFormButtonStyles} onClick={handleSignIn}>
             Prijavi se
           </Button>
         </CardActions>

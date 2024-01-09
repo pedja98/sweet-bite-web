@@ -1,10 +1,10 @@
-export const SignInFieldStyles = {
+export const SignInFormFieldStyles = {
   m: 1,
   minWidth: 280,
   maxHeight: 92,
 }
 
-export const SignInButtonStyles = {
+export const SignInFormButtonStyles = {
   m: 1,
   minWidth: 250,
   height: 35,

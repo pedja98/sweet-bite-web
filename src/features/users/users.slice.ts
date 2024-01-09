@@ -9,8 +9,15 @@ const usersSlice = createSlice({
     addUser: (state, action: PayloadAction<User>) => {
       state.push(action.payload)
     },
+    updateUser: (state, action: PayloadAction<{ username: string; updatedAttributes: Partial<User> }>) => {
+      const { username, updatedAttributes } = action.payload
+      const userIndex = state.findIndex((user) => user.username === username)
+      if (userIndex !== -1) {
+        state[userIndex] = { ...state[userIndex], ...updatedAttributes }
+      }
+    },
   },
 })
 
-export const { addUser } = usersSlice.actions
+export const { addUser, updateUser } = usersSlice.actions
 export default usersSlice.reducer

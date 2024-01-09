@@ -17,11 +17,11 @@ import {
   TextFieldStyled,
 } from '../../styles/common'
 import {
-  SignUpButtonStyles,
+  SignUpFormButtonStyles,
   SignUpCartContextAndActionStyles,
-  SignUpFieldStyles,
+  SignUpFormFieldStyles,
   SignUpNameAndSurnameFieldStyles,
-  SignUpSelectStyles,
+  SignUpFormSelectStyles,
 } from '../../constants/signUp'
 import { SignUpProps } from '../../interfaces/signUp'
 import { ChangeEvent, useEffect, useRef, useState } from 'react'
@@ -30,7 +30,7 @@ import { addUser } from '../../features/users/users.slice'
 import { User } from '../../features/users/users.interfaces'
 import { setNotification } from '../../features/notifications/notifications.slice'
 import { NotificationTypeSuccess, NotificationTypeWarning } from '../../constants/notifications'
-import { selectUserByAttributes } from '../../features/users/users.selectors'
+import { selectUserProperty } from '../../features/users/users.selectors'
 import { useNavigate } from 'react-router-dom'
 
 const SignUp = () => {
@@ -46,7 +46,7 @@ const SignUp = () => {
     confirm: '',
   })
   const dispatch = useAppDispatch()
-  const isUsernameTaken = !!useAppSelector(selectUserByAttributes({ username: signUpData.username }))
+  const isUsernameTaken = !!useAppSelector(selectUserProperty({ username: signUpData.username }))
 
   const signUpButtonRef = useRef<HTMLButtonElement>(null)
 
@@ -117,7 +117,7 @@ const SignUp = () => {
       >
         <CardContent sx={SignUpCartContextAndActionStyles}>
           <Root>
-            <Typography variant='h5'>KRERRAJ NALOG</Typography>
+            <Typography variant='h5'>KREIRAJ NALOG</Typography>
           </Root>
           <NameSurnameContainer>
             <TextFieldStyled
@@ -136,27 +136,27 @@ const SignUp = () => {
             />
           </NameSurnameContainer>
           <TextFieldStyled
-            sx={SignUpFieldStyles}
+            sx={SignUpFormFieldStyles}
             id='address'
             label='Adresa'
             value={signUpData.address}
             onChange={handleChange('address')}
           />
           <TextFieldStyled
-            sx={SignUpFieldStyles}
+            sx={SignUpFormFieldStyles}
             id='phone'
             label='Telefon'
             value={signUpData.phone}
             onChange={handleChange('phone')}
           />
           <TextFieldStyled
-            sx={SignUpFieldStyles}
+            sx={SignUpFormFieldStyles}
             id='username'
             label='Korisničko ime'
             value={signUpData.username}
             onChange={handleChange('username')}
           />
-          <FormControl sx={SignUpSelectStyles} size='small'>
+          <FormControl sx={SignUpFormSelectStyles} size='small'>
             <InputLabel id='type'>Tip korisnika</InputLabel>
             <SelectStyled labelId='type' id='type' label='Type' value={signUpData.type} onChange={handleChange('type')}>
               <MenuItemStyled value=''>
@@ -167,7 +167,7 @@ const SignUp = () => {
             </SelectStyled>
           </FormControl>
           <TextFieldStyled
-            sx={SignUpFieldStyles}
+            sx={SignUpFormFieldStyles}
             id='password'
             label='Lozinka'
             type='password'
@@ -175,7 +175,7 @@ const SignUp = () => {
             onChange={handleChange('password')}
           />
           <TextFieldStyled
-            sx={SignUpFieldStyles}
+            sx={SignUpFormFieldStyles}
             id='confirm'
             label='Potvrda'
             type='password'
@@ -184,7 +184,7 @@ const SignUp = () => {
           />
         </CardContent>
         <CardActions sx={SignUpCartContextAndActionStyles}>
-          <Button ref={signUpButtonRef} sx={SignUpButtonStyles} onClick={handleSignUp}>
+          <Button ref={signUpButtonRef} sx={SignUpFormButtonStyles} onClick={handleSignUp}>
             Kreiraj nalog
           </Button>
         </CardActions>

@@ -1,16 +1,16 @@
-export const SignUpFieldStyles = {
+export const SignUpFormFieldStyles = {
   m: 1,
   width: 280,
   height: 40,
 }
 
-export const SignUpSelectStyles = {
+export const SignUpFormSelectStyles = {
   width: 280,
   height: 40,
   mt: 3,
 }
 
-export const SignUpButtonStyles = {
+export const SignUpFormButtonStyles = {
   m: 1,
   minWidth: 250,
   height: 35,

@@ -3,6 +3,7 @@ import { persistReducer, persistStore } from 'redux-persist'
 import storage from 'redux-persist/lib/storage'
 import usersReducer from '../features/users/users.slice'
 import notificationsReducer from '../features/notifications/notifications.slice'
+import authReducer from '../features/auth/auth.slice'
 
 const persistConfig = {
   key: 'root',
@@ -12,6 +13,7 @@ const persistConfig = {
 const rootReducer = combineReducers({
   users: usersReducer,
   notifications: notificationsReducer,
+  auth: authReducer,
 })
 
 const persistedReducer = persistReducer(persistConfig, rootReducer)

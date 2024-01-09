@@ -1,6 +1,6 @@
 import { createSelector } from '@reduxjs/toolkit'
 import { RootState } from '../../app/store'
-import { UserAttributes } from './users.interfaces'
+import { User, UserAttributes } from './users.interfaces'
 
 export const selectUserByAttributes = ({ username, password, type }: UserAttributes) =>
   createSelector(
@@ -11,11 +11,18 @@ export const selectUserByAttributes = ({ username, password, type }: UserAttribu
       }
 
       return users.find((user) => {
-        return (
-          (!username || user.username === username) &&
-          (!password || user.password === password) &&
-          (!type || user.type === type)
-        )
+        return user.username === username && user.password === password && user.type === type
       })
+    },
+  )
+
+export const selectUserProperty = ({ username, key }: { username: string; key?: keyof User }) =>
+  createSelector(
+    (state: RootState) => state.users,
+    (users) => {
+      const user = users.find((user) => {
+        return user.username === username
+      })
+      return user ? (key ? user[key] : user) : undefined
     },
   )

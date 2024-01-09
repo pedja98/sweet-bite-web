@@ -1,12 +1,15 @@
 import { Outlet } from 'react-router-dom'
-import Header from '../common/header/header'
+import Header from '../common/header/Header'
+import NavBar from '../common/navBar/NavBar'
+import { useAppSelector } from '../../app/hooks'
+import { selectAuthKey } from '../../features/auth/auth.selectors'
 
 const User = () => {
-  const auth = JSON.parse(String(localStorage.getItem('auth')))
-  console.log(auth)
+  const currentUserType = useAppSelector(selectAuthKey('type'))
   return (
     <div>
       <Header />
+      <NavBar userType={currentUserType} />
       <Outlet />
     </div>
   )

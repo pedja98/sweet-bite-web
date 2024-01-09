@@ -1,6 +1,6 @@
 import { createTheme } from '@mui/material/styles'
 import {
-  FontColor,
+  TernaryColor,
   PrimaryThemeColor,
   SecondaryThemeColor,
   SelectedItemColor,
@@ -11,7 +11,7 @@ export default createTheme({
   palette: {
     primary: {
       main: PrimaryThemeColor,
-      dark: FontColor,
+      dark: TernaryColor,
     },
     secondary: {
       main: SecondaryThemeColor,
@@ -35,12 +35,12 @@ export default createTheme({
     h4: {
       fontFamily: '"Kalam", cursive',
       fontSize: '2.125rem !important',
-      color: FontColor,
+      color: TernaryColor,
     },
     h5: {
       fontFamily: '"Kalam", cursive',
       fontSize: '1.5rem !important',
-      color: FontColor,
+      color: TernaryColor,
     },
     h6: {
       fontFamily: '"Kalam", cursive',
@@ -91,12 +91,12 @@ export default createTheme({
       styleOverrides: {
         root: {
           '& label': {
-            color: FontColor,
+            color: TernaryColor,
             fontWeight: 'bold',
             paddingLeft: '5%',
           },
           '& input': {
-            color: FontColor,
+            color: TernaryColor,
             fontWeight: 'bold',
           },
         },
@@ -105,7 +105,7 @@ export default createTheme({
     MuiInputLabel: {
       styleOverrides: {
         root: {
-          color: FontColor,
+          color: TernaryColor,
           fontWeight: 'bold',
         },
       },
@@ -117,11 +117,11 @@ export default createTheme({
       styleOverrides: {
         root: {
           '& label': {
-            color: FontColor,
+            color: TernaryColor,
             fontWeight: 'bold',
           },
           '& select': {
-            color: FontColor,
+            color: TernaryColor,
             fontWeight: 'bold',
           },
         },
