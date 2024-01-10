@@ -11,6 +11,7 @@ import { Provider } from 'react-redux'
 import Notification from './components/notification/Notification'
 import { SnackbarProvider } from 'notistack'
 import { PersistGate } from 'redux-persist/integration/react'
+import './index.css'
 
 const root = ReactDOM.createRoot(document.getElementById('root') as HTMLElement)
 

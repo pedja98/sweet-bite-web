@@ -17,7 +17,6 @@ const NavBar = ({ userType }: { userType: string }) => {
     dispatch(signOut())
     navigate('/')
   }
-  console.log(userType)
   return (
     <NavigationStyled>
       {userType === UserTypeKupac ? (
