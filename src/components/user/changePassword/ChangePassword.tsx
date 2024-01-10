@@ -1,8 +1,13 @@
-import { Button, Card, CardActions, CardContent, SelectChangeEvent, Typography } from '@mui/material'
+import { Card, SelectChangeEvent, Typography } from '@mui/material'
 import { useAppDispatch, useAppSelector } from '../../../app/hooks'
 import { selectUserProperty } from '../../../features/users/users.selectors'
-import { Root, TextFieldStyled } from '../../../styles/common'
-import { UserCartContextAndActionStyles, UserFormButtonStyles, UserFormFieldStyles } from '../../../constants/user'
+import {
+  FormButtonStyled,
+  FormCartActionStyled,
+  FormCartContextStyled,
+  FormTextFieldStyled,
+  Root,
+} from '../../../styles/common'
 import { UserStyledCenterBackgroundContainer } from '../../../styles/users'
 import { ChangeEvent, useEffect, useRef, useState } from 'react'
 import { ChangePasswordProps } from '../../../interfaces/users'
@@ -99,40 +104,40 @@ const ChangePassword = () => {
           paddingTop: '1.5%',
         }}
       >
-        <CardContent sx={UserCartContextAndActionStyles}>
+        <FormCartContextStyled>
           <Root>
             <Typography variant='h5'>PROMENA LOZINKE</Typography>
           </Root>
-          <TextFieldStyled
+          <FormTextFieldStyled
             value={changePasswordData.oldPassword}
             onChange={handleChange('oldPassword')}
-            sx={UserFormFieldStyles}
             id='old-password'
             label='Stara lozinka'
             type='password'
+            sx={{ m: 1 }}
           />
-          <TextFieldStyled
+          <FormTextFieldStyled
             value={changePasswordData.newPassword}
             onChange={handleChange('newPassword')}
-            sx={UserFormFieldStyles}
             id='new-password'
             label='Nova lozinka'
             type='password'
+            sx={{ m: 1 }}
           />
-          <TextFieldStyled
+          <FormTextFieldStyled
             value={changePasswordData.confirmNewPassword}
             onChange={handleChange('confirmNewPassword')}
-            sx={UserFormFieldStyles}
             id='confirm-new-password'
             label='Potvrda nove lozinke'
             type='password'
+            sx={{ m: 1 }}
           />
-        </CardContent>
-        <CardActions sx={UserCartContextAndActionStyles}>
-          <Button onClick={handleChangePassword} ref={changePasswordButtonRef} sx={UserFormButtonStyles}>
+        </FormCartContextStyled>
+        <FormCartActionStyled>
+          <FormButtonStyled sx={{ m: 1 }} onClick={handleChangePassword} ref={changePasswordButtonRef}>
             Izmeni lozinku
-          </Button>
-        </CardActions>
+          </FormButtonStyled>
+        </FormCartActionStyled>
       </Card>
     </UserStyledCenterBackgroundContainer>
   )

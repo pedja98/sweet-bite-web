@@ -2,17 +2,19 @@ import { ChangeEvent, useEffect, useRef, useState } from 'react'
 import { useAppDispatch, useAppSelector } from '../../../app/hooks'
 import { selectUserProperty } from '../../../features/users/users.selectors'
 import { DetailsProps } from '../../../interfaces/users'
-import { Button, Card, CardActions, CardContent, SelectChangeEvent, Typography } from '@mui/material'
+import { Card, SelectChangeEvent, Typography } from '@mui/material'
 import { setNotification } from '../../../features/notifications/notifications.slice'
 import { NotificationTypeSuccess, NotificationTypeWarning } from '../../../constants/notification'
 import { UserStyledCenterBackgroundContainer } from '../../../styles/users'
-import { NameSurnameContainer, Root, TextFieldStyled } from '../../../styles/common'
 import {
-  UserCartContextAndActionStyles,
-  UserFormButtonStyles,
-  UserFormFieldStyles,
-  UserNameAndSurnameFieldStyles,
-} from '../../../constants/user'
+  FormButtonStyled,
+  FormCartActionStyled,
+  FormCartContextStyled,
+  FormSmallTextFieldStyled,
+  FormTextFieldStyled,
+  NameSurnameContainer,
+  Root,
+} from '../../../styles/common'
 import { selectAuthKey } from '../../../features/auth/auth.selectors'
 import { User } from '../../../features/users/users.interfaces'
 import { updateUser } from '../../../features/users/users.slice'
@@ -112,53 +114,47 @@ const Details = () => {
           paddingTop: '1.5%',
         }}
       >
-        <CardContent sx={UserCartContextAndActionStyles}>
+        <FormCartContextStyled>
           <Root>
             <Typography variant='h5'>DETALJI KORISNIKA</Typography>
           </Root>
           <NameSurnameContainer>
-            <TextFieldStyled
-              sx={UserNameAndSurnameFieldStyles}
-              id='name'
-              label='Ime'
-              value={detailsData.name}
-              onChange={handleChange('name')}
-            />
-            <TextFieldStyled
-              sx={UserNameAndSurnameFieldStyles}
+            <FormSmallTextFieldStyled id='name' label='Ime' value={detailsData.name} onChange={handleChange('name')} />
+            <FormSmallTextFieldStyled
               id='surname'
               label='Prezime'
               value={detailsData.surname}
               onChange={handleChange('surname')}
+              sx={{ m: 1 }}
             />
           </NameSurnameContainer>
-          <TextFieldStyled
-            sx={UserFormFieldStyles}
+          <FormTextFieldStyled
             id='address'
             label='Adresa'
             value={detailsData.address}
             onChange={handleChange('address')}
+            sx={{ m: 1 }}
           />
-          <TextFieldStyled
-            sx={UserFormFieldStyles}
+          <FormTextFieldStyled
+            sx={{ m: 1 }}
             id='phone'
             label='Telefon'
             value={detailsData.phone}
             onChange={handleChange('phone')}
           />
-          <TextFieldStyled
-            sx={UserFormFieldStyles}
+          <FormTextFieldStyled
             id='username'
             label='Korisničko ime'
             value={detailsData.username}
             onChange={handleChange('username')}
+            sx={{ m: 1 }}
           />
-        </CardContent>
-        <CardActions sx={UserCartContextAndActionStyles}>
-          <Button ref={detailsButtonRef} sx={UserFormButtonStyles} onClick={handleSavechanges}>
+        </FormCartContextStyled>
+        <FormCartActionStyled>
+          <FormButtonStyled sx={{ m: 1 }} ref={detailsButtonRef} onClick={handleSavechanges}>
             SAČUVAJ IZMENE
-          </Button>
-        </CardActions>
+          </FormButtonStyled>
+        </FormCartActionStyled>
       </Card>
     </UserStyledCenterBackgroundContainer>
   )

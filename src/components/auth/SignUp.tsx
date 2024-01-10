@@ -1,28 +1,17 @@
+import { Card, InputLabel, SelectChangeEvent, Typography } from '@mui/material'
 import {
-  Button,
-  Card,
-  CardActions,
-  CardContent,
-  FormControl,
-  InputLabel,
-  SelectChangeEvent,
-  Typography,
-} from '@mui/material'
-import {
+  FormCartContextStyled,
   MenuItemStyled,
   NameSurnameContainer,
   Root,
   SelectStyled,
   StyledCenterBackgroundContainer,
-  TextFieldStyled,
+  FormTextFieldStyled,
+  FormCartActionStyled,
+  FormButtonStyled,
+  FormControlStyled,
+  FormSmallTextFieldStyled,
 } from '../../styles/common'
-import {
-  SignUpFormButtonStyles,
-  SignUpCartContextAndActionStyles,
-  SignUpFormFieldStyles,
-  SignUpNameAndSurnameFieldStyles,
-  SignUpFormSelectStyles,
-} from '../../constants/signUp'
 import { SignUpProps } from '../../interfaces/signUp'
 import { ChangeEvent, useEffect, useRef, useState } from 'react'
 import { useAppDispatch, useAppSelector } from '../../app/hooks'
@@ -116,48 +105,48 @@ const SignUp = () => {
           paddingTop: '1.5%',
         }}
       >
-        <CardContent sx={SignUpCartContextAndActionStyles}>
+        <FormCartContextStyled>
           <Root>
             <Typography variant='h5'>KREIRAJ NALOG</Typography>
           </Root>
           <NameSurnameContainer>
-            <TextFieldStyled
-              sx={SignUpNameAndSurnameFieldStyles}
+            <FormSmallTextFieldStyled
+              sx={{ m: 1 }}
               id='name'
               label='Ime'
               value={signUpData.name}
               onChange={handleChange('name')}
             />
-            <TextFieldStyled
-              sx={SignUpNameAndSurnameFieldStyles}
+            <FormSmallTextFieldStyled
               id='surname'
               label='Prezime'
               value={signUpData.surname}
               onChange={handleChange('surname')}
+              sx={{ m: 1 }}
             />
           </NameSurnameContainer>
-          <TextFieldStyled
-            sx={SignUpFormFieldStyles}
+          <FormTextFieldStyled
             id='address'
             label='Adresa'
+            sx={{ m: 1 }}
             value={signUpData.address}
             onChange={handleChange('address')}
           />
-          <TextFieldStyled
-            sx={SignUpFormFieldStyles}
+          <FormTextFieldStyled
+            sx={{ m: 1 }}
             id='phone'
             label='Telefon'
             value={signUpData.phone}
             onChange={handleChange('phone')}
           />
-          <TextFieldStyled
-            sx={SignUpFormFieldStyles}
+          <FormTextFieldStyled
             id='username'
             label='Korisničko ime'
             value={signUpData.username}
             onChange={handleChange('username')}
+            sx={{ m: 1 }}
           />
-          <FormControl sx={SignUpFormSelectStyles} size='small'>
+          <FormControlStyled size='small' sx={{ m: 1 }}>
             <InputLabel id='type'>Tip korisnika</InputLabel>
             <SelectStyled labelId='type' id='type' label='Type' value={signUpData.type} onChange={handleChange('type')}>
               <MenuItemStyled value=''>
@@ -166,29 +155,29 @@ const SignUp = () => {
               <MenuItemStyled value={UserTypeKupac}>Kupac</MenuItemStyled>
               <MenuItemStyled value={UserTypeZaposleni}>Zaposleni</MenuItemStyled>
             </SelectStyled>
-          </FormControl>
-          <TextFieldStyled
-            sx={SignUpFormFieldStyles}
+          </FormControlStyled>
+          <FormTextFieldStyled
+            sx={{ m: 1 }}
             id='password'
             label='Lozinka'
             type='password'
             value={signUpData.password}
             onChange={handleChange('password')}
           />
-          <TextFieldStyled
-            sx={SignUpFormFieldStyles}
+          <FormTextFieldStyled
+            sx={{ m: 1 }}
             id='confirm'
             label='Potvrda'
             type='password'
             value={signUpData.confirm}
             onChange={handleChange('confirm')}
           />
-        </CardContent>
-        <CardActions sx={SignUpCartContextAndActionStyles}>
-          <Button ref={signUpButtonRef} sx={SignUpFormButtonStyles} onClick={handleSignUp}>
+        </FormCartContextStyled>
+        <FormCartActionStyled>
+          <FormButtonStyled sx={{ m: 1 }} ref={signUpButtonRef} onClick={handleSignUp}>
             Kreiraj nalog
-          </Button>
-        </CardActions>
+          </FormButtonStyled>
+        </FormCartActionStyled>
       </Card>
     </StyledCenterBackgroundContainer>
   )

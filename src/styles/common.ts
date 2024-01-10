@@ -1,7 +1,7 @@
 import { styled } from '@mui/material/styles'
 import { Link } from 'react-router-dom'
 import { TernaryColor, PrimaryThemeColor, SecondaryThemeColor, WhiteTeamColor } from '../constants/common'
-import { MenuItem, Select, TextField } from '@mui/material'
+import { Button, CardActions, CardContent, FormControl, MenuItem, Select, TextField } from '@mui/material'
 
 export const StyledBackgroundContainer = styled('div')(() => ({
   backgroundColor: PrimaryThemeColor,
@@ -56,17 +56,6 @@ export const MenuItemStyled = styled(MenuItem)(({ theme }) => ({
   },
 }))
 
-export const TextFieldStyled = styled(TextField)(({ theme }) => ({
-  color: TernaryColor,
-  borderColor: theme.palette.primary.main,
-  '&:hover': {
-    borderColor: theme.palette.primary.main,
-  },
-  '&.Mui-focusVisible': {
-    borderColor: theme.palette.primary.main,
-  },
-}))
-
 export const NameSurnameContainer = styled('div')(() => ({
   width: '100%',
   display: 'flex',
@@ -78,4 +67,62 @@ export const WhiteRoot = styled('div')(() => ({
   width: '100%',
   textAlign: 'center',
   backgroundColor: WhiteTeamColor,
+}))
+
+export const FormTextFieldStyled = styled(TextField)(({ theme }) => ({
+  color: TernaryColor,
+  margin: '30',
+  padding: '10',
+  minWidth: 280,
+  maxHeight: 92,
+  borderColor: theme.palette.primary.main,
+  '&:hover': {
+    borderColor: theme.palette.primary.main,
+  },
+  '&.Mui-focusVisible': {
+    borderColor: theme.palette.primary.main,
+  },
+}))
+
+export const FormSmallTextFieldStyled = styled(TextField)(({ theme }) => ({
+  color: TernaryColor,
+  maxWidth: '48%',
+  height: 40,
+  marginTop: '30',
+  paddingTop: '10',
+  marginBottom: '30',
+  paddingBottom: '10',
+  borderColor: theme.palette.primary.main,
+  '&:hover': {
+    borderColor: theme.palette.primary.main,
+  },
+  '&.Mui-focusVisible': {
+    borderColor: theme.palette.primary.main,
+  },
+}))
+
+export const FormControlStyled = styled(FormControl)(() => ({
+  margin: '30',
+  padding: '10',
+  minWidth: 280,
+  maxHeight: 92,
+}))
+
+export const FormButtonStyled = styled(Button)(() => ({
+  margin: '30',
+  padding: '10',
+  minWidth: 250,
+  height: 35,
+}))
+
+export const FormCartContextStyled = styled(CardContent)(() => ({
+  display: 'flex',
+  flexDirection: 'column',
+  alignItems: 'center',
+}))
+
+export const FormCartActionStyled = styled(CardActions)(() => ({
+  display: 'flex',
+  flexDirection: 'column',
+  alignItems: 'center',
 }))
