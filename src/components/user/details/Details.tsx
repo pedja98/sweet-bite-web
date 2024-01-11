@@ -5,7 +5,7 @@ import { DetailsProps } from '../../../interfaces/users'
 import { Card, SelectChangeEvent, Typography } from '@mui/material'
 import { setNotification } from '../../../features/notifications/notifications.slice'
 import { NotificationTypeSuccess, NotificationTypeWarning } from '../../../constants/notification'
-import { UserStyledCenterBackgroundContainer } from '../../../styles/users'
+import { StyledCenterBackgroundContainerVerticaly } from '../../../styles/users'
 import {
   FormButtonStyled,
   FormCartActionStyled,
@@ -104,7 +104,7 @@ const Details = () => {
   }
 
   return (
-    <UserStyledCenterBackgroundContainer>
+    <StyledCenterBackgroundContainerVerticaly>
       <Card
         variant='outlined'
         sx={{
@@ -156,7 +156,7 @@ const Details = () => {
           </FormButtonStyled>
         </FormCartActionStyled>
       </Card>
-    </UserStyledCenterBackgroundContainer>
+    </StyledCenterBackgroundContainerVerticaly>
   )
 }
 

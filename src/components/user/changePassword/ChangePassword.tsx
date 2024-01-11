@@ -8,7 +8,7 @@ import {
   FormTextFieldStyled,
   Root,
 } from '../../../styles/common'
-import { UserStyledCenterBackgroundContainer } from '../../../styles/users'
+import { StyledCenterBackgroundContainerVerticaly } from '../../../styles/users'
 import { ChangeEvent, useEffect, useRef, useState } from 'react'
 import { ChangePasswordProps } from '../../../interfaces/users'
 import { setNotification } from '../../../features/notifications/notifications.slice'
@@ -93,7 +93,7 @@ const ChangePassword = () => {
   }
 
   return (
-    <UserStyledCenterBackgroundContainer>
+    <StyledCenterBackgroundContainerVerticaly>
       <Card
         variant='outlined'
         sx={{
@@ -139,7 +139,7 @@ const ChangePassword = () => {
           </FormButtonStyled>
         </FormCartActionStyled>
       </Card>
-    </UserStyledCenterBackgroundContainer>
+    </StyledCenterBackgroundContainerVerticaly>
   )
 }
 

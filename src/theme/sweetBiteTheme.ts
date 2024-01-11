@@ -57,6 +57,7 @@ export default createTheme({
     body1: {
       fontFamily: '"Kalam", cursive',
       fontSize: '1rem !important',
+      color: TernaryColor,
     },
     body2: {
       fontFamily: '"Kalam", cursive',

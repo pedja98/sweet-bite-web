@@ -102,7 +102,6 @@ const SignUp = () => {
           maxWidth: 310,
           display: 'flex',
           flexDirection: 'column',
-          paddingTop: '1.5%',
         }}
       >
         <FormCartContextStyled>
@@ -146,7 +145,7 @@ const SignUp = () => {
             onChange={handleChange('username')}
             sx={{ m: 1 }}
           />
-          <FormControlStyled size='small' sx={{ m: 1 }}>
+          <FormControlStyled size='small' sx={{ m: 2 }}>
             <InputLabel id='type'>Tip korisnika</InputLabel>
             <SelectStyled labelId='type' id='type' label='Type' value={signUpData.type} onChange={handleChange('type')}>
               <MenuItemStyled value=''>

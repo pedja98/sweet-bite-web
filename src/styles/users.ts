@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 
-export const UserStyledCenterBackgroundContainer = styled('div')(() => ({
+export const StyledCenterBackgroundContainerVerticaly = styled('div')(() => ({
   display: 'flex',
   flexDirection: 'column',
   alignItems: 'center',

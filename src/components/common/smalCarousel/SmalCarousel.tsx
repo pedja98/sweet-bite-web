@@ -5,7 +5,7 @@ import { PrimaryThemeColor, WhiteTeamColor } from '../../../constants/common'
 import { useNavigate } from 'react-router-dom'
 
 const SmalCarousel = ({ products }: { products: Product[] }) => {
-  const [startIndex, setStartIndex] = useState(0)
+  const [startIndex, setStartIndex] = useState<number>(0)
   const itemsPerPage = 3
   const navigate = useNavigate()
 
@@ -40,7 +40,11 @@ const SmalCarousel = ({ products }: { products: Product[] }) => {
                 <Typography variant='h5'>{product.name}</Typography>
                 <Button
                   onClick={() => {
-                    navigate(`/user/product/${product.id}`)
+                    navigate(`/user/product/${product.id}`, {
+                      state: {
+                        ...product,
+                      },
+                    })
                   }}
                 >
                   Details

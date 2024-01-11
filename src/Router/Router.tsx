@@ -5,7 +5,7 @@ import Home from '../components/user/home/Home'
 import User from '../components/user/User'
 import Details from '../components/user/details/Details'
 import ChangePassword from '../components/user/changePassword/ChangePassword'
-import Product from '../components/user/product/product'
+import ProductDetails from '../components/user/productDetails/ProductDetails'
 
 const router = createBrowserRouter([
   { path: '/', element: <SignIn /> },
@@ -17,7 +17,7 @@ const router = createBrowserRouter([
       { path: '', element: <Home /> },
       { path: 'details', element: <Details /> },
       { path: 'change-password', element: <ChangePassword /> },
-      { path: 'product/:id', element: <Product /> },
+      { path: 'product/:id', element: <ProductDetails /> },
     ],
   },
 ])

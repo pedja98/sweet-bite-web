@@ -115,6 +115,13 @@ export const FormButtonStyled = styled(Button)(() => ({
   height: 35,
 }))
 
+export const FormSmallButtonStyled = styled(Button)(() => ({
+  margin: '30',
+  padding: '10',
+  minWidth: 150,
+  height: 35,
+}))
+
 export const FormCartContextStyled = styled(CardContent)(() => ({
   display: 'flex',
   flexDirection: 'column',
@@ -125,4 +132,11 @@ export const FormCartActionStyled = styled(CardActions)(() => ({
   display: 'flex',
   flexDirection: 'column',
   alignItems: 'center',
+}))
+
+export const RootRowFlexDirectionStyle = styled('div')(() => ({
+  width: '100%',
+  display: 'flex',
+  flexDirection: 'row',
+  gap: 15,
 }))

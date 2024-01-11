@@ -81,7 +81,7 @@ const SignIn = () => {
         variant='outlined'
         sx={{
           maxWidth: 310,
-          height: 330,
+          height: 345,
           display: 'flex',
           flexDirection: 'column',
           paddingTop: '3%%',
@@ -106,7 +106,7 @@ const SignIn = () => {
             onChange={handleChange('password')}
             sx={{ m: 1 }}
           />
-          <FormControlStyled size='small' sx={{ m: 1 }}>
+          <FormControlStyled size='small' sx={{ m: 2 }}>
             <InputLabel id='type'>Tip korisnika</InputLabel>
             <SelectStyled labelId='type' id='type' label='Type' value={signInData.type} onChange={handleChange('type')}>
               <MenuItemStyled value=''>
