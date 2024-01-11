@@ -31,6 +31,6 @@ export const SignOutButtonStyle = styled(Button)(() => ({
     height: 30,
     fontSize: '16px',
     textAlign: 'right',
-    marginRight: '1%',
+    marginRight: '2%',
   },
 }))

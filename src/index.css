@@ -44,7 +44,7 @@ body {
 
 .container {
   width: 100vh;
-  padding-left: 19%;
+  padding-left: 24%;
 }
 
 .slide-wrapper {
@@ -57,7 +57,7 @@ body {
 }
 
 .slide-wrapper .slide-button#next_slide {
-  right: -405px;
+  right: -469px;
   margin-top: -212px;
 }
 
