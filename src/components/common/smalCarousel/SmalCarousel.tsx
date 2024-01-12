@@ -3,6 +3,7 @@ import { Product } from '../../../features/products/products.interfaces'
 import { Button, Card, CardContent, CardMedia, Typography } from '@mui/material'
 import { PrimaryThemeColor, WhiteTeamColor } from '../../../constants/common'
 import { useNavigate } from 'react-router-dom'
+import './smallCarousel.css'
 
 const SmalCarousel = ({ products }: { products: Product[] }) => {
   const [startIndex, setStartIndex] = useState<number>(0)
@@ -40,11 +41,7 @@ const SmalCarousel = ({ products }: { products: Product[] }) => {
                 <Typography variant='h5'>{product.name}</Typography>
                 <Button
                   onClick={() => {
-                    navigate(`/user/product/${product.id}`, {
-                      state: {
-                        ...product,
-                      },
-                    })
+                    navigate(`/user/product/${product.id}`)
                   }}
                 >
                   Details

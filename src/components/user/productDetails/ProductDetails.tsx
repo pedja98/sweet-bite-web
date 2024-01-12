@@ -1,4 +1,4 @@
-import { useLocation } from 'react-router-dom'
+import { useParams } from 'react-router-dom'
 import { Product } from '../../../features/products/products.interfaces'
 import { StyledCenterBackgroundContainerVerticaly } from '../../../styles/users'
 import { Card, Typography } from '@mui/material'
@@ -12,13 +12,20 @@ import { ChangeEvent, useState } from 'react'
 import { WhiteTeamColor } from '../../../constants/common'
 import { setNotification } from '../../../features/notifications/notifications.slice'
 import { NotificationTypeSuccess, NotificationTypeWarning } from '../../../constants/notification'
-import { useAppDispatch } from '../../../app/hooks'
+import { useAppDispatch, useAppSelector } from '../../../app/hooks'
 import { BasketItem } from '../../../features/basket/basket.interfaces'
 import { addItemToBasket } from '../../../features/basket/basket.slice'
+import { selectProductById } from '../../../features/products/products.slelectors'
 
 const ProductDetails = () => {
-  const location = useLocation()
-  const productData: Product = location.state as Product
+  const { id } = useParams()
+  const productData: Product | undefined = useAppSelector(
+    selectProductById({ id: !isNaN(Number(id)) ? Number(id) : -1 }),
+  )
+
+  if (!productData) {
+    return <></>
+  }
 
   const [amount, setAmount] = useState<number>(0)
   const [comment, setComment] = useState<string>('')

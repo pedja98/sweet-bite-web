@@ -21,20 +21,74 @@ const NavBar = ({ userType }: { userType: string }) => {
     <NavigationStyled>
       {userType === UserTypeKupac ? (
         <NavigationLinksContainerStyled>
-          <NavBarLinkStyled to='/user'>Početna</NavBarLinkStyled>
-          <NavBarLinkStyled to='/user'>Moje narudžbine</NavBarLinkStyled>
-          <NavBarLinkStyled to='/user'>Obaveštenja</NavBarLinkStyled>
-          <NavBarLinkStyled to='/user'>Korpa</NavBarLinkStyled>
-          <NavBarLinkStyled to='/user/details'>Detalji korisika</NavBarLinkStyled>
-          <NavBarLinkStyled to='/user/change-password'>Promena lozinke</NavBarLinkStyled>
+          <NavBarLinkStyled
+            style={({ isActive }) => {
+              return {
+                borderBottom: isActive ? '2px solid' : '',
+              }
+            }}
+            to='/user/home'
+          >
+            Početna
+          </NavBarLinkStyled>
+          <NavBarLinkStyled to='/'>Moje narudžbine</NavBarLinkStyled>
+          <NavBarLinkStyled to='/'>Obaveštenja</NavBarLinkStyled>
+          <NavBarLinkStyled to='/'>Korpa</NavBarLinkStyled>
+          <NavBarLinkStyled
+            style={({ isActive }) => {
+              return {
+                borderBottom: isActive ? '2px solid' : '',
+              }
+            }}
+            to='/user/details'
+          >
+            Detalji korisika
+          </NavBarLinkStyled>
+          <NavBarLinkStyled
+            style={({ isActive }) => {
+              return {
+                borderBottom: isActive ? '2px solid' : '',
+              }
+            }}
+            to='/user/change-password'
+          >
+            Promena lozinke
+          </NavBarLinkStyled>
         </NavigationLinksContainerStyled>
       ) : (
         <NavigationLinksContainerStyled>
-          <NavBarLinkStyled to='/user'>Početna</NavBarLinkStyled>
-          <NavBarLinkStyled to='/user'>Narudžbine</NavBarLinkStyled>
-          <NavBarLinkStyled to='/user'>Dodaj proizvod</NavBarLinkStyled>
-          <NavBarLinkStyled to='/user/details'>Detalji korisika</NavBarLinkStyled>
-          <NavBarLinkStyled to='/user/change-password'>Promena lozinke</NavBarLinkStyled>
+          <NavBarLinkStyled
+            to='/user/home'
+            style={({ isActive }) => {
+              return {
+                borderBottom: isActive ? '2px solid' : '',
+              }
+            }}
+          >
+            Početna
+          </NavBarLinkStyled>
+          <NavBarLinkStyled to=''>Narudžbine</NavBarLinkStyled>
+          <NavBarLinkStyled to=''>Dodaj proizvod</NavBarLinkStyled>
+          <NavBarLinkStyled
+            to='/user/details'
+            style={({ isActive }) => {
+              return {
+                borderBottom: isActive ? '2px solid' : '',
+              }
+            }}
+          >
+            Detalji korisika
+          </NavBarLinkStyled>
+          <NavBarLinkStyled
+            to='/user/change-password'
+            style={({ isActive }) => {
+              return {
+                borderBottom: isActive ? '2px solid' : '',
+              }
+            }}
+          >
+            Promena lozinke
+          </NavBarLinkStyled>
         </NavigationLinksContainerStyled>
       )}
       <SignOutButtonStyle onClick={handleSignOut}>Odjavi se</SignOutButtonStyle>

@@ -16,3 +16,11 @@ export const getNextProductId = () =>
       return products.length
     },
   )
+
+export const selectProductById = ({ id }: { id: number }) =>
+  createSelector(
+    (state: RootState) => state.products,
+    (products) => {
+      return products.find((product) => product.id === id)
+    },
+  )

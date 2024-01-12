@@ -72,7 +72,7 @@ const SignIn = () => {
     }
 
     dispatch(signIn({ username: signInData.username, type: signInData.type }))
-    navigate('/user')
+    navigate('/user/home')
   }
 
   return (

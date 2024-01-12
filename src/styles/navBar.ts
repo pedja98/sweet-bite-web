@@ -1,13 +1,16 @@
 import styled from 'styled-components'
 import { TernaryColor, WhiteTeamColor } from '../constants/common'
-import { Link } from 'react-router-dom'
+import { NavLink } from 'react-router-dom'
 import { Button } from '@mui/material'
 
-export const NavBarLinkStyled = styled(Link)(() => ({
+export const NavBarLinkStyled = styled(NavLink)(() => ({
   textDecoration: 'none',
   color: WhiteTeamColor,
   fontWeight: 'bold',
   marginLeft: '1%',
+  '&:hover': {
+    borderBottom: '2px solid',
+  },
 }))
 
 export const NavigationStyled = styled('div')(() => ({

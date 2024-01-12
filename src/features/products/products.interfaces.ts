@@ -6,4 +6,5 @@ export interface Product {
   type: 'kolač' | 'torta'
   ingredients: string
   pic: string
+  comments: string[]
 }

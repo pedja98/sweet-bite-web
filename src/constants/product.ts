@@ -9,6 +9,7 @@ export const ProductsInitialState: Product[] = [
     type: 'torta',
     ingredients: 'Mleko, šećer, jaja',
     pic: '/products/Cake1.jpg',
+    comments: [],
   },
   {
     id: 2,
@@ -18,6 +19,7 @@ export const ProductsInitialState: Product[] = [
     type: 'torta',
     ingredients: 'Mleko, šećer, jaja',
     pic: '/products/Cake2.jpg',
+    comments: [],
   },
   {
     id: 3,
@@ -27,6 +29,7 @@ export const ProductsInitialState: Product[] = [
     type: 'torta',
     ingredients: 'Mleko, šećer, jaja',
     pic: '/products/Cake3.jpg',
+    comments: [],
   },
   {
     id: 4,
@@ -36,6 +39,7 @@ export const ProductsInitialState: Product[] = [
     type: 'torta',
     ingredients: 'Mleko, šećer, jaja',
     pic: '/products/Cake4.jpg',
+    comments: [],
   },
   {
     id: 5,
@@ -45,6 +49,7 @@ export const ProductsInitialState: Product[] = [
     type: 'torta',
     ingredients: 'Mleko, šećer, jaja',
     pic: '/products/Cake5.jpg',
+    comments: [],
   },
   {
     id: 6,
@@ -54,8 +59,8 @@ export const ProductsInitialState: Product[] = [
     type: 'torta',
     ingredients: 'Mleko, šećer, jaja',
     pic: '/products/Cake6.jpg',
+    comments: [],
   },
-
   {
     id: 7,
     name: 'Kolač 1',
@@ -64,6 +69,7 @@ export const ProductsInitialState: Product[] = [
     type: 'kolač',
     ingredients: 'Mleko, šećer, jaja',
     pic: '/products/Cookie1.jpg',
+    comments: [],
   },
   {
     id: 8,
@@ -73,6 +79,7 @@ export const ProductsInitialState: Product[] = [
     type: 'kolač',
     ingredients: 'Mleko, šećer, jaja',
     pic: '/products/Cookie2.jpg',
+    comments: [],
   },
   {
     id: 9,
@@ -82,6 +89,7 @@ export const ProductsInitialState: Product[] = [
     type: 'kolač',
     ingredients: 'Mleko, šećer, jaja',
     pic: '/products/Cookie3.jpg',
+    comments: [],
   },
   {
     id: 10,
@@ -91,6 +99,7 @@ export const ProductsInitialState: Product[] = [
     type: 'kolač',
     ingredients: 'Mleko, šećer, jaja',
     pic: '/products/Cookie4.jpg',
+    comments: [],
   },
   {
     id: 11,
@@ -100,6 +109,7 @@ export const ProductsInitialState: Product[] = [
     type: 'kolač',
     ingredients: 'Mleko, šećer, jaja',
     pic: '/products/Cookie5.jpg',
+    comments: [],
   },
   {
     id: 12,
@@ -109,5 +119,6 @@ export const ProductsInitialState: Product[] = [
     type: 'kolač',
     ingredients: 'Mleko, šećer, jaja',
     pic: '/products/Cookie6.jpg',
+    comments: [],
   },
 ]
