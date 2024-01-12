@@ -3,7 +3,7 @@ import Header from '../common/header/Header'
 import NavBar from '../common/navBar/NavBar'
 import { useAppSelector } from '../../app/hooks'
 import { selectAuthKey } from '../../features/auth/auth.selectors'
-import Footer from '../common/footer/footer'
+import Footer from '../common/footer/Footer'
 
 const User = () => {
   const currentUserType = useAppSelector(selectAuthKey('type'))

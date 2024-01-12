@@ -31,9 +31,36 @@ const NavBar = ({ userType }: { userType: string }) => {
           >
             Početna
           </NavBarLinkStyled>
-          <NavBarLinkStyled to='/'>Moje narudžbine</NavBarLinkStyled>
-          <NavBarLinkStyled to='/'>Obaveštenja</NavBarLinkStyled>
-          <NavBarLinkStyled to='/'>Korpa</NavBarLinkStyled>
+          <NavBarLinkStyled
+            style={({ isActive }) => {
+              return {
+                borderBottom: isActive ? '2px solid' : '',
+              }
+            }}
+            to='/user/my-orders'
+          >
+            Moje narudžbine
+          </NavBarLinkStyled>
+          <NavBarLinkStyled
+            style={({ isActive }) => {
+              return {
+                borderBottom: isActive ? '2px solid' : '',
+              }
+            }}
+            to='/user/notifications'
+          >
+            Obaveštenja
+          </NavBarLinkStyled>
+          <NavBarLinkStyled
+            style={({ isActive }) => {
+              return {
+                borderBottom: isActive ? '2px solid' : '',
+              }
+            }}
+            to='/user/basket'
+          >
+            Korpa
+          </NavBarLinkStyled>
           <NavBarLinkStyled
             style={({ isActive }) => {
               return {
@@ -67,8 +94,26 @@ const NavBar = ({ userType }: { userType: string }) => {
           >
             Početna
           </NavBarLinkStyled>
-          <NavBarLinkStyled to=''>Narudžbine</NavBarLinkStyled>
-          <NavBarLinkStyled to=''>Dodaj proizvod</NavBarLinkStyled>
+          <NavBarLinkStyled
+            style={({ isActive }) => {
+              return {
+                borderBottom: isActive ? '2px solid' : '',
+              }
+            }}
+            to='/user/orders'
+          >
+            Narudžbine
+          </NavBarLinkStyled>
+          <NavBarLinkStyled
+            to='/user/add-product'
+            style={({ isActive }) => {
+              return {
+                borderBottom: isActive ? '2px solid' : '',
+              }
+            }}
+          >
+            Dodaj proizvod
+          </NavBarLinkStyled>
           <NavBarLinkStyled
             to='/user/details'
             style={({ isActive }) => {
