@@ -6,6 +6,7 @@ import notificationsReducer from '../features/notifications/notifications.slice'
 import authReducer from '../features/auth/auth.slice'
 import productsReducer from '../features/products/products.slice'
 import basketReducer from '../features/basket/basket.slice'
+import ordersReducer from '../features/orders/orders.slice'
 
 const persistConfig = {
   key: 'root',
@@ -18,6 +19,7 @@ const rootReducer = combineReducers({
   auth: authReducer,
   products: productsReducer,
   basket: basketReducer,
+  orders: ordersReducer,
 })
 
 const persistedReducer = persistReducer(persistConfig, rootReducer)

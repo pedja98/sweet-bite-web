@@ -45,6 +45,7 @@ export default createTheme({
     h6: {
       fontFamily: '"Kalam", cursive',
       fontSize: '1.25rem !important',
+      color: TernaryColor,
     },
     subtitle1: {
       fontFamily: '"Kalam", cursive',

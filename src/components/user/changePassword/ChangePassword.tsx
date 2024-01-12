@@ -8,16 +8,16 @@ import {
   FormTextFieldStyled,
   Root,
 } from '../../../styles/common'
-import { StyledCenterBackgroundContainerVerticaly } from '../../../styles/users'
+import { StyledCenterBackgroundContainerVerticalyColumn } from '../../../styles/users'
 import { ChangeEvent, useEffect, useRef, useState } from 'react'
 import { ChangePasswordProps } from '../../../interfaces/users'
 import { setNotification } from '../../../features/notifications/notifications.slice'
 import { NotificationTypeSuccess, NotificationTypeWarning } from '../../../constants/notification'
 import { updateUser } from '../../../features/users/users.slice'
-import { selectAuthKey } from '../../../features/auth/auth.selectors'
+import { selectAuthAttributeByKey } from '../../../features/auth/auth.selectors'
 
 const ChangePassword = () => {
-  const authUsername = useAppSelector(selectAuthKey('username'))
+  const authUsername = useAppSelector(selectAuthAttributeByKey('username'))
   const authUserPassword = useAppSelector(selectUserProperty({ username: authUsername, key: 'password' }))
   const [changePasswordData, setChangePasswordData] = useState<ChangePasswordProps>({
     oldPassword: '',
@@ -93,7 +93,7 @@ const ChangePassword = () => {
   }
 
   return (
-    <StyledCenterBackgroundContainerVerticaly>
+    <StyledCenterBackgroundContainerVerticalyColumn>
       <Card
         variant='outlined'
         sx={{
@@ -139,7 +139,7 @@ const ChangePassword = () => {
           </FormButtonStyled>
         </FormCartActionStyled>
       </Card>
-    </StyledCenterBackgroundContainerVerticaly>
+    </StyledCenterBackgroundContainerVerticalyColumn>
   )
 }
 

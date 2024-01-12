@@ -5,7 +5,7 @@ import { DetailsProps } from '../../../interfaces/users'
 import { Card, SelectChangeEvent, Typography } from '@mui/material'
 import { setNotification } from '../../../features/notifications/notifications.slice'
 import { NotificationTypeSuccess, NotificationTypeWarning } from '../../../constants/notification'
-import { StyledCenterBackgroundContainerVerticaly } from '../../../styles/users'
+import { StyledCenterBackgroundContainerVerticalyColumn } from '../../../styles/users'
 import {
   FormButtonStyled,
   FormCartActionStyled,
@@ -15,13 +15,13 @@ import {
   NameSurnameContainer,
   Root,
 } from '../../../styles/common'
-import { selectAuthKey } from '../../../features/auth/auth.selectors'
+import { selectAuthAttributeByKey } from '../../../features/auth/auth.selectors'
 import { User } from '../../../features/users/users.interfaces'
 import { updateUser } from '../../../features/users/users.slice'
 import { signIn } from '../../../features/auth/auth.slice'
 
 const Details = () => {
-  const authUsername: string = useAppSelector(selectAuthKey('username'))
+  const authUsername: string = useAppSelector(selectAuthAttributeByKey('username'))
   const authUserDetails: User | undefined = useAppSelector(selectUserProperty({ username: authUsername })) as
     | User
     | undefined
@@ -104,7 +104,7 @@ const Details = () => {
   }
 
   return (
-    <StyledCenterBackgroundContainerVerticaly>
+    <StyledCenterBackgroundContainerVerticalyColumn>
       <Card
         variant='outlined'
         sx={{
@@ -156,7 +156,7 @@ const Details = () => {
           </FormButtonStyled>
         </FormCartActionStyled>
       </Card>
-    </StyledCenterBackgroundContainerVerticaly>
+    </StyledCenterBackgroundContainerVerticalyColumn>
   )
 }
 

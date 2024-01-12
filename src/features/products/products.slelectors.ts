@@ -9,14 +9,6 @@ export const selectProductByType = ({ type }: { type: 'kolač' | 'torta' }) =>
     },
   )
 
-export const getNextProductId = () =>
-  createSelector(
-    (state: RootState) => state.products,
-    (products) => {
-      return products.length
-    },
-  )
-
 export const selectProductById = ({ id }: { id: number }) =>
   createSelector(
     (state: RootState) => state.products,

@@ -1,4 +1,8 @@
 export interface BasketItem {
-  productId: number
+  id: number
+  productPic: string
+  productName: string
+  priceOfSingleItem: number
   amount: number
+  basketItemOwner: string
 }

@@ -23,6 +23,10 @@ export const Root = styled('div')(() => ({
   textAlign: 'center',
 }))
 
+export const RootNotCentered = styled('div')(() => ({
+  width: '100%',
+}))
+
 export const LinkStyled = styled(Link)(() => ({
   textDecoration: 'none',
   color: SecondaryThemeColor,
@@ -74,6 +78,21 @@ export const FormTextFieldStyled = styled(TextField)(({ theme }) => ({
   margin: '30',
   padding: '10',
   minWidth: 280,
+  maxHeight: 92,
+  borderColor: theme.palette.primary.main,
+  '&:hover': {
+    borderColor: theme.palette.primary.main,
+  },
+  '&.Mui-focusVisible': {
+    borderColor: theme.palette.primary.main,
+  },
+}))
+
+export const FormBigTextFieldStyled = styled(TextField)(({ theme }) => ({
+  color: TernaryColor,
+  margin: '30',
+  padding: '10',
+  width: '50%',
   maxHeight: 92,
   borderColor: theme.palette.primary.main,
   '&:hover': {
@@ -139,4 +158,35 @@ export const RootRowFlexDirectionStyle = styled('div')(() => ({
   display: 'flex',
   flexDirection: 'row',
   gap: 15,
+}))
+
+export const RootRowFlexDirectionStyleCenter = styled('div')(() => ({
+  width: '100%',
+  display: 'flex',
+  flexDirection: 'row',
+  gap: 15,
+  alignItems: 'center',
+  justifyContent: 'center',
+}))
+
+export const RootColumnFlexDirectionStyle = styled('div')(() => ({
+  width: '100%',
+  display: 'flex',
+  flexDirection: 'column',
+  gap: 2,
+}))
+
+export const ActionButtonStyled = styled(Button)(() => ({
+  margin: '30',
+  padding: '10',
+  minWidth: 100,
+  height: 35,
+}))
+
+export const ActionButtonBigStyled = styled(Button)(() => ({
+  margin: '30',
+  padding: '10',
+  minWidth: 160,
+  height: 35,
+  fontSize: '15px',
 }))

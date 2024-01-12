@@ -9,7 +9,7 @@ export const ProductsInitialState: Product[] = [
     type: 'torta',
     ingredients: 'Mleko, šećer, jaja',
     pic: '/products/Cake1.jpg',
-    comments: [],
+    comments: ['Dobra torta', 'Loša torta!', 'Odlična torta'],
   },
   {
     id: 2,

@@ -2,11 +2,11 @@ import { Outlet } from 'react-router-dom'
 import Header from '../common/header/Header'
 import NavBar from '../common/navBar/NavBar'
 import { useAppSelector } from '../../app/hooks'
-import { selectAuthKey } from '../../features/auth/auth.selectors'
+import { selectAuthAttributeByKey } from '../../features/auth/auth.selectors'
 import Footer from '../common/footer/Footer'
 
 const User = () => {
-  const currentUserType = useAppSelector(selectAuthKey('type'))
+  const currentUserType = useAppSelector(selectAuthAttributeByKey('type'))
   return (
     <div>
       <Header />
