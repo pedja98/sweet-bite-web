@@ -21,6 +21,6 @@ export const UsersInitialState: User[] = [
   },
 ]
 
-export const UserTypeKupac = 'kupac'
+export const UserTypeBuyer = 'kupac'
 
-export const UserTypeZaposleni = 'zaposleni'
+export const UserTypeWorker = 'zaposleni'

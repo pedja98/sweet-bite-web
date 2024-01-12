@@ -21,7 +21,7 @@ import { setNotification } from '../../features/notifications/notifications.slic
 import { NotificationTypeSuccess, NotificationTypeWarning } from '../../constants/notification'
 import { selectUserProperty } from '../../features/users/users.selectors'
 import { useNavigate } from 'react-router-dom'
-import { UserTypeKupac, UserTypeZaposleni } from '../../constants/user'
+import { UserTypeBuyer, UserTypeWorker } from '../../constants/user'
 
 const SignUp = () => {
   const navigate = useNavigate()
@@ -151,8 +151,8 @@ const SignUp = () => {
               <MenuItemStyled value=''>
                 <em>Nijedan</em>
               </MenuItemStyled>
-              <MenuItemStyled value={UserTypeKupac}>Kupac</MenuItemStyled>
-              <MenuItemStyled value={UserTypeZaposleni}>Zaposleni</MenuItemStyled>
+              <MenuItemStyled value={UserTypeBuyer}>Kupac</MenuItemStyled>
+              <MenuItemStyled value={UserTypeWorker}>Zaposleni</MenuItemStyled>
             </SelectStyled>
           </FormControlStyled>
           <FormTextFieldStyled

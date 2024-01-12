@@ -13,7 +13,7 @@ import {
   StyledCenterBackgroundContainerVerticalyRow,
 } from '../../../styles/users'
 import { PrimaryThemeColor, WhiteTeamColor } from '../../../constants/common'
-import { removeBasketItem } from '../../../features/basket/basket.slice'
+import { emptyBasket, removeBasketItem } from '../../../features/basket/basket.slice'
 import { setNotification } from '../../../features/notifications/notifications.slice'
 import { NotificationTypeSuccess } from '../../../constants/notification'
 import { createOrder } from '../../../features/orders/orders.slice'
@@ -35,9 +35,9 @@ const Basket = () => {
       </Root>
     )
   }
-  let totalAmount = 0
+  let totalPrice = 0
   basketItems.forEach((basketItem) => {
-    totalAmount += basketItem.amount * basketItem.priceOfSingleItem
+    totalPrice += basketItem.amount * basketItem.priceOfSingleItem
   })
 
   const handleRemoveBasketItem = (id: number) => {
@@ -57,15 +57,17 @@ const Basket = () => {
         productPic: basketItem.productPic,
         productName: basketItem.productName,
         priceOfSingleItem: basketItem.priceOfSingleItem,
+        amount: basketItem.amount,
       })
     })
-    dispatch(createOrder({ totalAmount, username: authUsername, products: orderProducts } as Order))
+    dispatch(createOrder({ orderTotalPrice: totalPrice, username: authUsername, products: orderProducts } as Order))
     dispatch(
       setNotification({
         text: `Nova naružbina je uspešno kreirana`,
         type: NotificationTypeSuccess,
       }),
     )
+    dispatch(emptyBasket())
     navigate('/user/my-orders')
   }
 
@@ -109,7 +111,7 @@ const Basket = () => {
             <Typography variant='h6'>{basketItem.priceOfSingleItem}</Typography>
             <ActionButtonStyled
               onClick={() => {
-                handleRemoveBasketItem(basketItems[index].id)
+                handleRemoveBasketItem(basketItem.id)
               }}
             >
               Izbaci
@@ -134,7 +136,7 @@ const Basket = () => {
           }}
         >
           <Typography style={{ color: WhiteTeamColor }} variant='h6'>
-            {`Ukupno: ${totalAmount} RSD`}
+            {`Ukupno: ${totalPrice} RSD`}
           </Typography>
           <ActionButtonBigStyled
             onClick={handleCreateOrder}

@@ -20,8 +20,11 @@ const basketSlice = createSlice({
     removeBasketItem: (state, action: PayloadAction<number>) => {
       return state.filter((basketItem) => basketItem.id !== action.payload)
     },
+    emptyBasket: () => {
+      return BasketInitialState
+    },
   },
 })
 
-export const { addItemToBasket, removeBasketItem } = basketSlice.actions
+export const { addItemToBasket, removeBasketItem, emptyBasket } = basketSlice.actions
 export default basketSlice.reducer

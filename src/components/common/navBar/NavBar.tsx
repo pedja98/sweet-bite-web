@@ -7,7 +7,7 @@ import {
 } from '../../../styles/navBar'
 import { useAppDispatch } from '../../../app/hooks'
 import { signOut } from '../../../features/auth/auth.slice'
-import { UserTypeKupac } from '../../../constants/user'
+import { UserTypeBuyer } from '../../../constants/user'
 
 const NavBar = ({ userType }: { userType: string }) => {
   const navigate = useNavigate()
@@ -19,7 +19,7 @@ const NavBar = ({ userType }: { userType: string }) => {
   }
   return (
     <NavigationStyled>
-      {userType === UserTypeKupac ? (
+      {userType === UserTypeBuyer ? (
         <NavigationLinksContainerStyled>
           <NavBarLinkStyled
             style={({ isActive }) => {

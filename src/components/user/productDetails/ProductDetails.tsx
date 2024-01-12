@@ -21,11 +21,11 @@ import { addItemToBasket } from '../../../features/basket/basket.slice'
 import { selectProductById } from '../../../features/products/products.slelectors'
 import { addCommentToProduct } from '../../../features/products/products.slice'
 import { selectAuthAttributeByKey } from '../../../features/auth/auth.selectors'
-import { UserTypeKupac } from '../../../constants/user'
+import { UserTypeBuyer } from '../../../constants/user'
 
 const ProductDetails = () => {
   const { id } = useParams()
-  const areActionsVisible = useAppSelector(selectAuthAttributeByKey('type')) === UserTypeKupac
+  const areActionsVisible = useAppSelector(selectAuthAttributeByKey('type')) === UserTypeBuyer
   const currentUserUsername = useAppSelector(selectAuthAttributeByKey('username'))
 
   const productData: Product | undefined = useAppSelector(

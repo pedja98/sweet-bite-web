@@ -48,7 +48,7 @@ const BigCarousel = () => {
           }}
         >
           <div className={classes.textContainer}>
-            <Typography variant='h6' className={classes.promoText}>
+            <Typography variant='h6' style={{ color: 'black' }} className={classes.promoText}>
               Promocija 1: Popust 30%
             </Typography>
           </div>
@@ -60,7 +60,7 @@ const BigCarousel = () => {
           }}
         >
           <div className={classes.textContainer}>
-            <Typography variant='h6' className={classes.promoText}>
+            <Typography style={{ color: 'black' }} variant='h6' className={classes.promoText}>
               Promocija 2: Popust 25%
             </Typography>
           </div>
@@ -72,7 +72,7 @@ const BigCarousel = () => {
           }}
         >
           <div className={classes.textContainer}>
-            <Typography variant='h6' className={classes.promoText}>
+            <Typography style={{ color: 'black' }} variant='h6' className={classes.promoText}>
               Promocija 3: Popust 10%
             </Typography>
           </div>

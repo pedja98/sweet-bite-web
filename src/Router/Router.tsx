@@ -10,6 +10,7 @@ import Orders from '../components/user/orders/Orders'
 import AddProduct from '../components/user/addProduct/AddProduct'
 import Basket from '../components/user/basket/Basket'
 import Notifications from '../components/user/notifications/Notification'
+import OrderDetails from '../components/user/orderDetails/OrderDetails'
 
 const router = createBrowserRouter([
   { path: '/', element: <SignIn /> },
@@ -22,8 +23,9 @@ const router = createBrowserRouter([
       { path: 'details', element: <Details /> },
       { path: 'change-password', element: <ChangePassword /> },
       { path: 'product/:id', element: <ProductDetails /> },
-      { path: 'my-orders', element: <ProductDetails /> },
+      { path: 'my-orders', element: <Orders /> },
       { path: 'orders', element: <Orders /> },
+      { path: 'order/:id', element: <OrderDetails /> },
       { path: 'add-product', element: <AddProduct /> },
       { path: 'basket', element: <Basket /> },
       { path: 'notifications', element: <Notifications /> },
