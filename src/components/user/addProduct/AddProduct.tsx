@@ -24,7 +24,7 @@ const AddProduct = () => {
     price: 0,
     type: 'kolač',
     ingredients: '',
-    pic: '/products/Cake1.jpg',
+    pic: '',
   })
 
   const dispatch = useAppDispatch()
@@ -59,7 +59,16 @@ const AddProduct = () => {
         type: NotificationTypeSuccess,
       }),
     )
+    setProductData({
+      name: '',
+      description: '',
+      price: 0,
+      type: 'kolač',
+      ingredients: '',
+      pic: '',
+    })
   }
+
   const handleChange =
     (field: keyof typeof productData) =>
     (event: SelectChangeEvent<unknown> | ChangeEvent<HTMLInputElement | { value: unknown }>) => {
