@@ -1,10 +1,10 @@
+import { OrderNotification, OrderProduct, OrderType } from './orders.types'
+
 export interface Order {
   id: number
   products: OrderProduct[]
   orderTotalPrice: number
   username: string
   status: OrderType
+  notification: OrderNotification
 }
-
-export type OrderProduct = { productPic: string; productName: string; priceOfSingleItem: number; amount: number }
-export type OrderType = 'waiting' | 'accepted' | 'denied'

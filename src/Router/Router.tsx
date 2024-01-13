@@ -9,7 +9,7 @@ import ProductDetails from '../components/user/productDetails/ProductDetails'
 import Orders from '../components/user/orders/Orders'
 import AddProduct from '../components/user/addProduct/AddProduct'
 import Basket from '../components/user/basket/Basket'
-import Notifications from '../components/user/notifications/Notification'
+import OrderNotifications from '../components/user/orderNotifications/OrderNotifications'
 import OrderDetails from '../components/user/orderDetails/OrderDetails'
 
 const router = createBrowserRouter([
@@ -28,7 +28,7 @@ const router = createBrowserRouter([
       { path: 'order/:id', element: <OrderDetails /> },
       { path: 'add-product', element: <AddProduct /> },
       { path: 'basket', element: <Basket /> },
-      { path: 'notifications', element: <Notifications /> },
+      { path: 'notifications', element: <OrderNotifications /> },
     ],
   },
 ])

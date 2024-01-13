@@ -1,4 +1,4 @@
-import { OrderType } from '../features/orders/orders.interfaces'
+import { OrderType } from '../features/orders/orders.types'
 
 export const getOrderStatusText = (status: OrderType): string => {
   const statusMap: Record<OrderType, string> = {

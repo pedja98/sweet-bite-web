@@ -1,6 +1,7 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit'
 import { ProductsInitialState } from '../../constants/product'
 import { Product } from './products.interfaces'
+import { AddCommentToProductProps } from './products.types'
 
 const productsSlice = createSlice({
   name: 'products',
@@ -19,7 +20,7 @@ const productsSlice = createSlice({
       }
       state.push(product)
     },
-    addCommentToProduct: (state, action: PayloadAction<{ productId: number; comment: string }>) => {
+    addCommentToProduct: (state, action: PayloadAction<AddCommentToProductProps>) => {
       const { productId, comment } = action.payload
       const productIndex = state.findIndex((product) => product.id === productId)
 

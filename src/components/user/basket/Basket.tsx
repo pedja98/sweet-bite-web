@@ -17,8 +17,9 @@ import { emptyBasket, removeBasketItem } from '../../../features/basket/basket.s
 import { setNotification } from '../../../features/notifications/notifications.slice'
 import { NotificationTypeSuccess } from '../../../constants/notification'
 import { createOrder } from '../../../features/orders/orders.slice'
-import { Order, OrderProduct } from '../../../features/orders/orders.interfaces'
+import { Order } from '../../../features/orders/orders.interfaces'
 import { useNavigate } from 'react-router-dom'
+import { OrderProduct } from '../../../features/orders/orders.types'
 
 const Basket = () => {
   const dispatch = useAppDispatch()

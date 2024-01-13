@@ -1,7 +1,7 @@
 import { useParams } from 'react-router-dom'
 import { useAppDispatch, useAppSelector } from '../../../app/hooks'
 import { selectAuthAttributeByKey } from '../../../features/auth/auth.selectors'
-import { Order, OrderType } from '../../../features/orders/orders.interfaces'
+import { Order } from '../../../features/orders/orders.interfaces'
 import { selectOrdersById } from '../../../features/orders/orders.slelectors'
 import {
   StyledCenterBackgroundContainerVerticalyColumn,
@@ -20,6 +20,7 @@ import { UserTypeWorker } from '../../../constants/user'
 import { changeOrderStatus } from '../../../features/orders/orders.slice'
 import { setNotification } from '../../../features/notifications/notifications.slice'
 import { NotificationTypeSuccess } from '../../../constants/notification'
+import { OrderType } from '../../../features/orders/orders.types'
 
 const OrderDetails = () => {
   const { id } = useParams()
