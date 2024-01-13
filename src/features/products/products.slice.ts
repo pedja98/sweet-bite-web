@@ -1,13 +1,13 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit'
 import { ProductsInitialState } from '../../constants/product'
 import { Product } from './products.interfaces'
-import { AddCommentToProductProps } from './products.types'
+import { AddCommentToProductProps, AddProductProps } from './products.types'
 
 const productsSlice = createSlice({
   name: 'products',
   initialState: ProductsInitialState,
   reducers: {
-    addProduct: (state, action: PayloadAction<Product>) => {
+    addProduct: (state, action: PayloadAction<AddProductProps>) => {
       const product = {
         id: state.length === 0 ? 1 : state.length + 1,
         name: action.payload.name,
@@ -17,7 +17,7 @@ const productsSlice = createSlice({
         ingredients: action.payload.ingredients,
         pic: action.payload.pic,
         comments: [],
-      }
+      } as Product
       state.push(product)
     },
     addCommentToProduct: (state, action: PayloadAction<AddCommentToProductProps>) => {

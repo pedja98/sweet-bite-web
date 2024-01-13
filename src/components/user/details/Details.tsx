@@ -50,7 +50,7 @@ const Details = () => {
       setDetailsData({ ...detailsData, [field]: event.target.value as string })
     }
 
-  const handleSavechanges = () => {
+  const handleSaveChanges = () => {
     if (
       authUserDetails &&
       authUserDetails.username === detailsData.username &&
@@ -151,7 +151,7 @@ const Details = () => {
           />
         </FormCartContextStyled>
         <FormCartActionStyled>
-          <FormButtonStyled sx={{ m: 1 }} ref={detailsButtonRef} onClick={handleSavechanges}>
+          <FormButtonStyled sx={{ m: 1 }} ref={detailsButtonRef} onClick={handleSaveChanges}>
             SAČUVAJ IZMENE
           </FormButtonStyled>
         </FormCartActionStyled>
