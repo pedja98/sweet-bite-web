@@ -15,6 +15,7 @@ import { setNotification } from '../../../features/notifications/notifications.s
 import { NotificationTypeSuccess, NotificationTypeWarning } from '../../../constants/notification'
 import { addProduct } from '../../../features/products/products.slice'
 import { AddProductProps } from '../../../features/products/products.types'
+import { TernaryColor } from '../../../constants/common'
 
 const AddProduct = () => {
   const [showChoosePicture, setShowChoosePicture] = useState<boolean>(false)
@@ -144,10 +145,16 @@ const AddProduct = () => {
           </FormControlStyled>
         </FormCartContextStyled>
         <AddProductsFormCartActionStyled>
-          <ProductActionButtonStyled onClick={handleShowChoosePicture} sx={{ m: 1, fontSize: '12px' }}>
+          <ProductActionButtonStyled
+            onClick={handleShowChoosePicture}
+            sx={{ m: 1, fontSize: '12px', backgroundColor: TernaryColor }}
+          >
             Dodaj sliku
           </ProductActionButtonStyled>
-          <ProductActionButtonStyled onClick={handleAddProduct} sx={{ m: 1, fontSize: '12px' }}>
+          <ProductActionButtonStyled
+            onClick={handleAddProduct}
+            sx={{ m: 1, fontSize: '12px', backgroundColor: TernaryColor }}
+          >
             Dodaj proizvod
           </ProductActionButtonStyled>
         </AddProductsFormCartActionStyled>

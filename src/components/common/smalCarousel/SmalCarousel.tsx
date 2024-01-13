@@ -35,7 +35,7 @@ const SmalCarousel = ({ products }: { products: Product[] }) => {
         </button>
         <div className='cart-list'>
           {rotatedProducts.slice(0, itemsPerPage).map((product) => (
-            <Card className='cart-item' key={product.id} sx={{ m: 1 }}>
+            <Card className='cart-item' key={product.id} sx={{ m: 1, textAlign: 'center' }}>
               <CardMedia component='img' alt={product.name} height='140' image={product.pic} />
               <CardContent>
                 <Typography variant='h5'>{product.name}</Typography>

@@ -55,6 +55,7 @@ const OrderDetails = () => {
             marginBottom: '1%',
             paddingLeft: '2%',
             height: areActionsVisible ? 180 : 140,
+            backgroundColor: '#EEEEEE',
           }}
         >
           <Typography variant='h6'>{`Narudžbina: ${orderDetails.id}`}</Typography>
@@ -107,6 +108,7 @@ const OrderDetails = () => {
               justifyContent: 'center',
               pl: 2,
               gap: 10,
+              backgroundColor: '#EEEEEE',
             }}
           >
             <img
